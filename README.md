@@ -13,6 +13,7 @@
 ## Plan
   1. Add Education Information.
   2. Find solution to call this website without 'www'.
-  3. Make favicon
+  3. Make favicon.
+  
 ## Reference
   bootstrap - https://freehtml5.co/profile-free-html5-bootstrap-template-for-personal-and-vcard-resume-websites/
