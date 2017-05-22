@@ -12,8 +12,8 @@
 
 ## Plan
   1. Add Education Information.
-  2. Add introduction of myself.
-  3. Find solution to call this website without 'www'.
+  2. Find solution to call this website without 'www'.
+  3. Make webpage icon
   
 ## Reference
   bootstrap - https://freehtml5.co/profile-free-html5-bootstrap-template-for-personal-and-vcard-resume-websites/
