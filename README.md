@@ -16,6 +16,7 @@
   3. Make favicon.
   
 ## Reference
-  bootstrap - https://freehtml5.co/profile-free-html5-bootstrap-template-for-personal-and-vcard-resume-websites/
-              https://startbootstrap.com/template-overviews/clean-blog/
+  bootstrap 
+  1. https://freehtml5.co/profile-free-html5-bootstrap-template-for-personal-and-vcard-resume-websites/
+  2. https://startbootstrap.com/template-overviews/clean-blog/
               
