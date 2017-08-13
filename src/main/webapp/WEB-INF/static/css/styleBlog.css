@@ -96,16 +96,15 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #FF9000;
 }
 
-#fh5co-header,
-.fh5co-cover {
+#headerBlog {
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  height: 600px;
+  height: 100px;
   width: 100%;
 }
-#fh5co-header .overlay,
+#headerBlog .overlay,
 .fh5co-cover .overlay {
   position: absolute;
   top: 0;
@@ -114,18 +113,18 @@ h1, h2, h3, h4, h5, h6, figure {
   right: 0;
   background: rgba(255, 144, 0, 0.9);
 }
-#fh5co-header .display-t,
+#headerBlog .display-t,
 .fh5co-cover .display-t {
   width: 100%;
   display: table;
 }
-#fh5co-header .display-tc,
+#headerBlog .display-tc,
 .fh5co-cover .display-tc {
   display: table-cell;
   vertical-align: middle;
   height: 600px;
 }
-#fh5co-header .display-tc h1, #fh5co-header .display-tc h2, #fh5co-header .display-tc h3,
+#headerBlog .display-tc h1, #headerBlog .display-tc h2, #headerBlog .display-tc h3,
 .fh5co-cover .display-tc h1,
 .fh5co-cover .display-tc h2,
 .fh5co-cover .display-tc h3 {
@@ -133,7 +132,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0;
   color: white;
 }
-#fh5co-header .display-tc h1,
+#headerBlog .display-tc h1,
 .fh5co-cover .display-tc h1 {
   font-family: "Kaushan Script", cursive;
   margin-bottom: 30px;
@@ -146,12 +145,12 @@ h1, h2, h3, h4, h5, h6, figure {
   -o-transform: rotate(-5deg);
   transform: rotate(-5deg);
 }
-#fh5co-header .display-tc h1 span,
+#headerBlog .display-tc h1 span,
 .fh5co-cover .display-tc h1 span {
   padding: 4px 15px;
   position: relative;
 }
-#fh5co-header .display-tc h1 span:before,
+#headerBlog .display-tc h1 span:before,
 .fh5co-cover .display-tc h1 span:before {
   position: absolute;
   top: 40px;
@@ -162,7 +161,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #fff;
   margin-left: -30px;
 }
-#fh5co-header .display-tc h1 span:after,
+#headerBlog .display-tc h1 span:after,
 .fh5co-cover .display-tc h1 span:after {
   position: absolute;
   top: 40px;
@@ -174,18 +173,18 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-right: -30px;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-header .display-tc h1,
+  #headerBlog .display-tc h1,
   .fh5co-cover .display-tc h1 {
     font-size: 34px;
   }
-  #fh5co-header .display-tc h1 span:before,
+  #headerBlog .display-tc h1 span:before,
   .fh5co-cover .display-tc h1 span:before {
     top: 28px;
     width: 20px;
     height: 3px;
     margin-left: -15px;
   }
-  #fh5co-header .display-tc h1 span:after,
+  #headerBlog .display-tc h1 span:after,
   .fh5co-cover .display-tc h1 span:after {
     top: 28px;
     width: 20px;
@@ -193,23 +192,23 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-right: -15px;
   }
 }
-#fh5co-header .display-tc h2,
+#headerBlog .display-tc h2,
 .fh5co-cover .display-tc h2 {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 30px;
 }
-#fh5co-header .display-tc h3,
+#headerBlog .display-tc h3,
 .fh5co-cover .display-tc h3 {
   font-size: 16px;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-header .display-tc h3,
+  #headerBlog .display-tc h3,
   .fh5co-cover .display-tc h3 {
     font-size: 14px;
   }
 }
-#fh5co-header .display-tc .profile-thumb,
+#headerBlog .display-tc .profile-thumb,
 .fh5co-cover .display-tc .profile-thumb {
   background-size: cover !important;
   background-position: center center;
@@ -243,11 +242,11 @@ h1, h2, h3, h4, h5, h6, figure {
 
 
 
-#fh5co-header .display-tc .fh5co-social-icons li a,
+#headerBlog .display-tc .fh5co-social-icons li a,
 .fh5co-cover .display-tc .fh5co-social-icons li a {
   color: #fff;
 }
-#fh5co-header .display-tc .fh5co-social-icons li a i,
+#headerBlog .display-tc .fh5co-social-icons li a i,
 .fh5co-cover .display-tc .fh5co-social-icons li a i {
   font-size: 30px;
 }
