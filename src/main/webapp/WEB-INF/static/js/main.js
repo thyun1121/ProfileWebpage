@@ -133,6 +133,19 @@
 	var loaderPage = function() {
 		$(".fh5co-loader").fadeOut("slow");
 	};
+	
+	var goToBlog = function(){
+		$('#toMyBlog').on('mouseenter', function(event){
+			$('#toMyBlog').html("<a href='blog/index.html'>click here!</a>");
+			
+		});
+		
+		$('#toMyBlog').on('mouseleave', function(event){
+			$('#toMyBlog').html("click here!");
+			
+		});
+		
+	}
 
 	
 	$(function(){
@@ -143,7 +156,7 @@
 		parallax();
 		// pieChart();
 		skillsWayPoint();
+		goToBlog();
 	});
-
 
 }());
