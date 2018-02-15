@@ -135,15 +135,18 @@
 	};
 	
 	var goToBlog = function(){
-		$('#toMyBlog').on('mouseenter', function(event){
-			$('#toMyBlog').html("<a href='blog/index.html'>click here!</a>");
-			
+		$('#toMyBlog').trigger('click', function(event){
+			alert('clicked!!');
 		});
-		
-		$('#toMyBlog').on('mouseleave', function(event){
-			$('#toMyBlog').html("click here!");
-			
-		});
+//		$('#toMyBlog').on('mouseenter', function(event){
+//			$('#toMyBlog').html("<a href='blog/index.html'>click here!</a>");
+//			
+//		});
+//		
+//		$('#toMyBlog').on('mouseleave', function(event){
+//			$('#toMyBlog').html("click here!");
+//			
+//		});
 		
 	}
 
@@ -156,7 +159,7 @@
 		parallax();
 		// pieChart();
 		skillsWayPoint();
-		goToBlog();
+		//goToBlog();
 	});
 
 }());

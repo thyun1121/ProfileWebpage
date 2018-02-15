@@ -104,10 +104,20 @@
 						<!-- <li><span class="first-block">Phone:</span><span class="second-block">+ 1235 2355 98</span></li> -->
 						<li><span class="first-block">Email:</span><span class="second-block">thyun.ahn@gmail.com</span></li>
 						<li><span class="first-block">Website:</span><span class="second-block">www.thyunAhn.com</span></li>
-						<li><span class="first-block">Blog:</span><span class="second-block" id="toMyBlog" >click here!</span></li>
-						<!-- <li><span class="first-block">Address:</span><span class="second-block">198 West 21th Street, Suite 721 New York NY 10016</span></li> -->
+						<li><span class="first-block">Blog:</span><a href="blog/index.html">click here!</a></li>
+						<!-- <li><span class="first-block">Blog:</span><span class="second-block" id="toMyBlog" onclick="javascript:funcA()" ontouchend="funcA()" >click here!</span></li>
+						<li><span class="first-block">Address:</span><span class="second-block">198 West 21th Street, Suite 721 New York NY 10016</span></li> -->
 					</ul>
+					
+					<!-- ul class info가 먹히면 a tag href로 페이지 이동이 안됨.. 그래서 꼼수로 hidden li tag 추가함..
+					style.scss의 @mixin inline-block()과 관련있는듯 한데.. scss도, mixin도 모르겠음.. 시간적여유가 생기면 알아볼 -->
+					<ul>
+						<li style="visibility:hidden"><span class="first-block">Blog:</span><a href="blog/index.html">click here!</a></li>
+					</ul>
+					
+						
 				</div>
+				
 				<div class="col-md-8">
 					<h2>Hi There!</h2>
 					<p>I'm a programmer and I'm working in IT service company using Java, Spring Framework and Oracle DB.</p>
@@ -682,8 +692,15 @@
 	<script src="js/google_map.js"></script>
 	
 	<!-- Main -->
-	<script src="js/main.js">
+	<script src="js/main.js"></script>
+	
+	<script type="text/javascript">
+	function funcA(){
+		alert('sdfsdf');
+	}
 	</script>
+	
+	
 
 	</body>
 </html>

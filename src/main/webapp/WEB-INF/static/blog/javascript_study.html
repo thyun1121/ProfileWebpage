@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>thyun.Ahn's blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    
+    
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackedit.io/style.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="index.html">thyun.ahn</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/javascript.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Javascript</h1>
+              <h2 class="subheading">Javascript 기초부터 심화까지 공부해보자</h2>
+              <span class="meta">Posted by
+                <a href="#">thyun.ahn</a>
+              on February 15, 2018</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article  class="stackedit">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+	          <div class="stackedit__html">
+	          	<h1 id="javascript">Javascript</h1>
+				<p>회사에서 javascript를 사용하지만 기본부터 차근히 정리하면서 공부해봤던 적은 없었기에, 이참에 정리하며 심화까지 익혀보려 한다.<br>
+				선임이 참고하라며 알려줬던 어느 블로거의 포스트를 토대로 정리하며 내 나름의 요약을 해보려 한다.</p>
+				<h2 id="클래스-기반-언어-vs--javascript">1. 클래스 기반 언어 vs  Javascript</h2>
+				<h3 id="클래스의-정의와-인스턴스">1) 클래스의 정의와 인스턴스</h3>
+				<p>클래스 기반 언어에서의 흐름 및 구조는 다음과 같다.</p>
+				<ol>
+				<li>클래스 정의</li>
+				<li>정의한 클래스를 이용하여 인스턴스 생성</li>
+				<li>생성된 인스턴스를 통해 실제 액션 실현</li>
+				</ol>
+				<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">class</span> <span class="token class-name">Alert</span><span class="token punctuation">{</span>
+ 
+    <span class="token keyword">private</span> String _msg<span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token function">alert</span><span class="token punctuation">(</span> String $msg <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        _msg <span class="token operator">=</span> $msg<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ 
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span> _msg <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+Alert a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Alert</span><span class="token punctuation">(</span> <span class="token string">"test"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// test출력</span>
+</code></pre>
+
+
+				<p>위와 같이 new를 통해 인스턴스 생성 후 액션을 실현하는 코드를 "호스트 코드"라고 한다.</p>
+				<p>나같은 경우, 주로 java에서 위와 같은 방식으로 구현을 하곤 한다. 이 방식이 나로서는 익숙한 방식이지만 단점이 있다고 한다.</p>
+				<p>아무래도 실제 프로그램은 인스턴스로 인해 동작하는데, 인스턴스 생성 전 인스턴스의 동작을 정의했던 클래스의 action과 state가 정작 인스턴스 생성 후의 상황과 달라질 수 있기 때문이다.</p>
+				<p>무튼, 이러한 "호스트 코드"에 익숙한 프로그래머들은 javascript가 낯설게 느껴지게 된다는데, 그 이유는 다음 차례에서 살펴보겠다.</p>
+				<h3 id="인스턴스-밖에-없는-javascript">2) 인스턴스 밖에 없는 Javascript</h3>
+				<p>제목에서 유추했겠지만, javascript에는 클래스가 없다.<br>
+				java와 마찬가지로, javascript에도 ‘.’ 문법이 있다.</p>
+				<blockquote>
+				<p>instance1.move(100,100);</p>
+				</blockquote>
+				<p>‘.’ 구문을 통해서 클래스로부터 실체화된 인스턴스에 접근할 수 있다. 하지만 그렇다고해서 javascript에 클래스가 존재한다고 생각하면 안된다.</p>
+				<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span>$x<span class="token punctuation">,</span> $y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> $x<span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> $y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">set</span><span class="token punctuation">:</span>move<span class="token punctuation">}</span><span class="token punctuation">;</span>
+instance1<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+				<p>위의 예제 코드의 특징을 3가지 정도로 표현하자면 아래와 같다.</p>
+				<ol>
+				<li>클래스가 없다.</li>
+				<li>move는 내부에서 this라는 변수를 사용하지만, 여전히 instance1과 아무런 관계가 없는 독립적인 함수이다.</li>
+				</ol>
+				<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span>$x<span class="token punctuation">,</span> $y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> $x<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> $y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> instance1 <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">set</span><span class="token punctuation">:</span>move<span class="token punctuation">}</span><span class="token punctuation">;</span>
+instance1<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> rect <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span><span class="token number">100</span><span class="token punctuation">,</span> pos<span class="token punctuation">:</span>move<span class="token punctuation">}</span><span class="token punctuation">;</span>
+rect<span class="token punctuation">.</span><span class="token function">pos</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+				<blockquote>
+				<p>보충설명을 하자면, java에서 함수의 소유자는 클래스이므로, 전반적으로 인스턴스나, 클래스로부터 함수가 불리는 형식이었지만, javascript에서는 이러한 구속이 없으므로, 함수에서 인스턴스를 고를 수 있는 방법도 제공하고 있음.</p>
+				</blockquote>
+				<ol start="3">
+				<li>인스턴스는 메서드 형태로 어떤 함수를 사용하려면, 반드시 본인의 속성에 해당 함수를 특정 키와 함께 저장해야 한다.</li>
+				</ol>
+				<p>javascript는 함수를 완전한 객체로 취급하며, 함수 그 자체도 오브젝트로부터 파생된 인스턴스이기 때문에, 함수 자체도 속성과 메서드(key-value)가 존재할 수 있다고 함.</p>
+				<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span>$x<span class="token punctuation">,</span> $y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> $x<span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> $y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//그냥 키 값을 할당하면 됨!</span>
+move<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+				<h3 id="그럼-new는-뭐야">3) 그럼 new는 뭐야?</h3>
+				<p>클래스가 없는 javascript에서도 new가 사용되므로 헷갈릴 법 하다.</p>
+				<p>javascript에서 new는 오브젝트의 인스턴스를 만드는 키워드로 사용된다.<br>
+				(물론, 인스턴스를 만들 때 굳이 new가 아닌 리터럴을 통해 만들 수도 있음.)</p>
+				<p>java에서 new의 역할은 다음과 같다.</p>
+				<ol>
+				<li>new 뒤에 지정된 클래스의 인스턴스를 만들고,</li>
+				<li>해당 클래스에 생성자 함수가 있는 경우, 그 함수를 호출한다.</li>
+				</ol>
+				<p><strong>But!!!</strong></p>
+				<p>javascript에서의 new의 역할은 java와는 다르다.</p>
+				<ol>
+				<li>일단 오브젝트를 하나 생성한 뒤,</li>
+				<li>new뒤에 지정된 함수의 프로토타입을 방금 생성한 오브젝트의 __proto__에 참조로 잡아준다.</li>
+				<li>그런다음, 방금 생성한 오브젝트를 new 뒤의 함수에게 컨텍스트로 전달하여 호출한다.</li>
+				</ol>
+				<ul>
+				<li>new를 이용한 코드</li>
+				</ul>
+				<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span>$x<span class="token punctuation">,</span> $y<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> $x<span class="token punctuation">;</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> $y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">move</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+				<ul>
+				<li>위 new를 이용한 코드 분석<br>
+				– 1.  var instance = {};<br>
+				– 2.  instance.__ proto__ = move.prototype;<br>
+				– 3. move.call(instance, 10, 10);</li>
+				</ul>
+				<p>보아하니, new를 이용하고 바로 위와 같이 직접 사용할 수 있겠지만, 이 블로그에서는 그냥 new를 사용하라고 한다. 이유는 다음과 같다.</p>
+				<ol>
+				<li>new 구문은 c 컴파일 수준에서 한번에 처리하므로, 훨씬 고속이다.</li>
+				<li>__ proto __ 속성은 브라우저에 따라 접근할 수 없는 경우(IE)도 있으므로, 애초에 불가능 할 수 있다.</li>
+				</ol>
+				<p>그리고, new 하나만 사용하면 되는데 굳이 저렇게 3단계나 걸쳐서 쓰긴 귀찮을 것 같다…</p>
+				<p>요점을 정리하자면,</p>
+				<ol>
+				<li>javascript의 new 구문 뒤에 오는 것은 클래스가 아니라, 함수!!</li>
+				<li>new를 통해 생성된 것은 오브젝트 {} !!</li>
+				<li>함수에 컨텍스트만 전달될 뿐, 생성자 함수라는 개념은 없음!!</li>
+				</ol>
+				<blockquote>
+				<p>“함수는 그저 함수입니다. 함수 내부에 this 키워드는 그저 전달된 컨텍스트를 가리킬 뿐이죠.” by. 참조 블로거.</p>
+				</blockquote>
+				<p>referenced by : <a href="http://www.bsidesoft.com/?p=318#main">http://www.bsidesoft.com/?p=318#main</a></p>
+			</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/taehyun87" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/thyun.ahn" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/thyun1121/" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+              <li class="list-inline-item">
+                <a href="https://github.com/thyun1121" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; thyun.ahn@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
