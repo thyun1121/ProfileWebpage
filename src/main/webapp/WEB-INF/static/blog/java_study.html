@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>thyun.Ahn's blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    
+    
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackedit.io/style.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="index.html">thyun.ahn</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/java3.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Java</h1>
+              <h2 class="subheading">사용할수록 새로운 Java</h2>
+              <span class="meta">Posted by
+                <a href="#">thyun.ahn</a>
+              on May 22, 2018</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article  class="stackedit">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+	          <div class="stackedit__html"><h1 id="java">Java</h1>
+<p>Java는 웬만하면 다 사용할 수 있다고 생각하였지만, 최근 회사 업무와 개인적으로 알고리즘 공부를 하면서 알게된 새로운 문법들이 적지않다.<br>
+역시 다시한번 틈틈이 공부해야함을 느낀다.</p>
+<h2 id="reflection">Reflection</h2>
+<p>reflection은 Java 기능으로써, Java program을 실행시켜 해당 프로그램을 조사하거나 스스로를 살펴볼 수 있다. 또한 프로그램의 내부 property까지 조작할 수 있다.</p>
+<blockquote>
+<p>나같은 경우 현재 회사에서 transaction 태우기 전, reflection을 사용하여, 파라미터의 프로퍼티를 reflection을 통해서 VO객체에 제대로 들어있는 놈인지를 조사한다. 그리고나서 파라미터 값을 바인딩하여 개발자에게 콘솔로 sql 로그를 보여주고 있다.</p>
+</blockquote>
+<p>JavaBeans에서는 빌더 툴을 사용해서 소프트웨어 컴포넌트를 시각적으로 조작할 수 있는데, 이 기능 역시 reflection을 통해서 구현한 것이라고 한다.</p>
+<p><strong>C,C++에서는 지원하지 않음.</strong></p>
+<p>예제를 통해서 어떻게 동작하는지 알아볼 필요가 있다.</p>
+<h3 id="example">Example</h3>
+<h4 id="simple-example">1) Simple Example</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Method<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Stack<span class="token punctuation">;</span>
+<span class="token comment">//간단예제</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Simple</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">try</span><span class="token punctuation">{</span>
+			Class <span class="token class-name">c</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"java.util.Stack"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			Method<span class="token punctuation">[</span><span class="token punctuation">]</span> m <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">getDeclaredMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>m<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Throwable e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>위 코드의 실행결과는 다음과 같다.</p>
+<blockquote>
+<p>public java.lang.Object java.util.Stack.push(java.lang.Object)<br>
+public synchronized java.lang.Object java.util.Stack.pop()<br>
+public synchronized java.lang.Object java.util.Stack.peek()<br>
+public boolean java.util.Stack.empty()<br>
+public synchronized int java.util.Stack.search(java.lang.Object)</p>
+</blockquote>
+<h4 id="instanceof-연산자-흉내내기">2) instanceof 연산자 흉내내기</h4>
+<p>Class.isInstance 메서드를 사용하면 instanceof 연산자를 흉내낼 수 있다.</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span><span class="token punctuation">}</span> 
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InstanceSample</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">try</span><span class="token punctuation">{</span>
+			<span class="token comment">//Class cls = Class.forName("A");  //=&gt; 에러</span>
+			Class <span class="token class-name">cls</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"reflection.A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">boolean</span> b1 <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">isInstance</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">37</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">boolean</span> b2 <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">isInstance</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Throwable e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>false<br>
+true</p>
+</blockquote>
+<h4 id="class의-method-조사">3) Class의 method 조사</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Method<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MethodSample</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token keyword">int</span> <span class="token function">f1</span><span class="token punctuation">(</span>Object p<span class="token punctuation">,</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token keyword">throws</span> NullPointerException<span class="token punctuation">{</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">==</span>null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NullPointerException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">return</span> x<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">try</span><span class="token punctuation">{</span>
+			Class <span class="token class-name">cls</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"reflection.MethodSample"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			Method<span class="token punctuation">[</span><span class="token punctuation">]</span> mList <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">getDeclaredMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>mList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				Method m <span class="token operator">=</span> mList<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"name = "</span><span class="token operator">+</span> m<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"decl class = "</span><span class="token operator">+</span>m<span class="token punctuation">.</span><span class="token function">getDeclaringClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				
+				Class<span class="token punctuation">[</span><span class="token punctuation">]</span> pList <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">getParameterTypes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>pList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+					System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"param #"</span><span class="token operator">+</span>j<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>pList<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+				
+				Class<span class="token punctuation">[</span><span class="token punctuation">]</span> eList <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">getExceptionTypes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> k<span class="token operator">&lt;</span>eList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+					System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"exec #"</span><span class="token operator">+</span>k<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>eList<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+				
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"return type = "</span><span class="token operator">+</span>m<span class="token punctuation">.</span><span class="token function">getReturnType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"==========================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Throwable e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>name = main<br>
+decl class = class reflection.MethodSample<br>
+param #0 class [Ljava.lang.String;<br>
+return type = void<br>
+==========================<br>
+name = f1<br>
+decl class = class reflection.MethodSample<br>
+param #0 class java.lang.Object<br>
+param #1 int<br>
+exec #0 class java.lang.NullPointerException<br>
+return type = int<br>
+==========================</p>
+</blockquote>
+<ul>
+<li><strong>getMethods()를 사용하면 상속받은 메소드에 대한 정보까지도 얻을 수 있다고 한다.</strong></li>
+</ul>
+<h4 id="생성자-정보-얻기">4) 생성자 정보 얻기</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Constructor<span class="token punctuation">;</span>
+
+<span class="token comment">//생성자 정보 파악</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConstructorSample</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token function">ConstructorSample</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">protected</span> <span class="token function">ConstructorSample</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">double</span> d<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">try</span><span class="token punctuation">{</span>
+			Class  <span class="token class-name">cls</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"reflection.ConstructorSample"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			Constructor<span class="token punctuation">[</span><span class="token punctuation">]</span> ctrList <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">getDeclaredConstructors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>ctrList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				Constructor ctr <span class="token operator">=</span> ctrList<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"name = "</span><span class="token operator">+</span>ctr<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"decl class = "</span><span class="token operator">+</span>ctr<span class="token punctuation">.</span><span class="token function">getDeclaringClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				Class<span class="token punctuation">[</span><span class="token punctuation">]</span> pList <span class="token operator">=</span> ctr<span class="token punctuation">.</span><span class="token function">getParameterTypes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>pList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+					System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"param #"</span><span class="token operator">+</span>j<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>pList<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+
+				Class<span class="token punctuation">[</span><span class="token punctuation">]</span> eList <span class="token operator">=</span> ctr<span class="token punctuation">.</span><span class="token function">getExceptionTypes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> k<span class="token operator">&lt;</span>eList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+					System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"exception #"</span><span class="token operator">+</span>k<span class="token operator">+</span><span class="token string">" "</span><span class="token operator">+</span>eList<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">}</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=========================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Throwable e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>name = reflection.ConstructorSample<br>
+decl class = class reflection.ConstructorSample<br>
+==========================<br>
+name = reflection.ConstructorSample<br>
+decl class = class reflection.ConstructorSample<br>
+param #0 int<br>
+param #1 double<br>
+==========================</p>
+</blockquote>
+<h4 id="class-field-정보-얻기">5) Class field 정보 얻기</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Field<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Modifier<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ClassFieldSample</span> <span class="token punctuation">{</span>
+	<span class="token keyword">private</span> <span class="token keyword">double</span> d<span class="token punctuation">;</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">37</span><span class="token punctuation">;</span>
+	String s <span class="token operator">=</span> <span class="token string">"testing"</span><span class="token punctuation">;</span>
+	
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">try</span><span class="token punctuation">{</span>
+			Class <span class="token class-name">cls</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"reflection.ClassFieldSample"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			
+			Field<span class="token punctuation">[</span><span class="token punctuation">]</span> fieldList <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">getDeclaredFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			
+			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>fieldList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+				Field fld <span class="token operator">=</span> fieldList<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"name = "</span><span class="token operator">+</span>fld<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"decl class = "</span><span class="token operator">+</span> fld<span class="token punctuation">.</span><span class="token function">getDeclaringClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"type = "</span><span class="token operator">+</span>fld<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				
+				<span class="token keyword">int</span> mod <span class="token operator">=</span> fld<span class="token punctuation">.</span><span class="token function">getModifiers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"modifiers = "</span><span class="token operator">+</span>Modifier<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>mod<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=============="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">catch</span><span class="token punctuation">(</span>Throwable e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+			System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+		
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>name = d<br>
+decl class = class reflection.ClassFieldSample<br>
+type = double<br>
+modifiers = private<br>
+==============<br>
+name = i<br>
+decl class = class reflection.ClassFieldSample<br>
+type = int<br>
+modifiers = public static final<br>
+==============<br>
+name = s<br>
+decl class = class reflection.ClassFieldSample<br>
+type = class java.lang.String<br>
+modifiers =<br>
+==============</p>
+</blockquote>
+<ul>
+<li><strong>Modifier 는 reflection용 클래스로, 필드 멤버의 제한자를 나타낸다. 제한자 자체는 정수로 표현되고, .toString()으로 위의 결과처럼 문자열 형식을 얻을 수 있음.</strong></li>
+</ul>
+<h4 id="이름으로-method-호출">5) 이름으로 method 호출</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Method<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InvokeMethod</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">public</span>  <span class="token keyword">int</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span>  a<span class="token punctuation">,</span> <span class="token keyword">int</span>  b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token keyword">return</span>  a<span class="token operator">+</span>b<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			Class <span class="token class-name">cls</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"reflection.InvokeMethod"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			
+			Class <span class="token class-name">paraTypes</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			paraTypes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span>TYPE<span class="token punctuation">;</span>
+			paraTypes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span>TYPE<span class="token punctuation">;</span>
+			
+			Method meth <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token string">"add"</span><span class="token punctuation">,</span> paraTypes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			InvokeMethod im <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InvokeMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			Object<span class="token punctuation">[</span><span class="token punctuation">]</span> argList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			argList<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">37</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			argList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">43</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			Object retObj <span class="token operator">=</span> meth<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>im<span class="token punctuation">,</span> argList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			Integer retVal <span class="token operator">=</span> <span class="token punctuation">(</span>Integer<span class="token punctuation">)</span> retObj<span class="token punctuation">;</span>
+			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>retVal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Throwable</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>80</p>
+</blockquote>
+<ul>
+<li><strong>getMethod()를 사용하면 주어진 이름과 인자를 가진 함수를 찾을 수 있다. 이 method를 찾아서 Method객체에 저장 후, 적절한 객체 인스턴스로 해당 method를 호출한다. 또한, method를 호출하기 위해서는 파라미터 목록이 생성되어져야 한다.</strong></li>
+</ul>
+<h4 id="새로운-객체-생성하기--생성자-호출하기">6) 새로운 객체 생성하기 (= 생성자 호출하기)</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Constructor<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CreateInstance</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token function">CreateInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token function">CreateInstance</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+		System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">+</span><span class="token string">" : "</span><span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			Class <span class="token class-name">cls</span> <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"reflection.CreateInstance"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			Class <span class="token class-name">paramTypes</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			paramTypes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span>TYPE<span class="token punctuation">;</span>
+			paramTypes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> Integer<span class="token punctuation">.</span>TYPE<span class="token punctuation">;</span>
+
+			Constructor ct <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">getConstructor</span><span class="token punctuation">(</span>paramTypes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			Object argList<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+			argList<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">37</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			argList<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span><span class="token number">43</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+			Object retObj <span class="token operator">=</span> ct<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span>argList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Throwable</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>37 : 43</p>
+</blockquote>
+<ul>
+<li><strong>생성자를 호출한다는 것은 객체를 새로 생성한다는 뜻이다. (더 정확하게 말하면, 객체를 생성 시, 메모리 할당과 동시에 새 객체가 생성된다.) 생성자를 호출하는 일은 method 호출하는 것과 다르지만, 굳이 위의 method 호출과 비슷하게 예제를 만든 것이라고 한다.</strong></li>
+<li><strong>위의 예제는 동적으로 객체를 생성한다는 것에 의의가 있으며, 해당 생성자를 컴파일 시간이 아닌 실행시간에 호출한다.</strong></li>
+</ul>
+<h4 id="필드의-값-변경하기">7) 필드의 값 변경하기</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Field<span class="token punctuation">;</span> 
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ChangeFieldVal</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span>  <span class="token keyword">double</span>  d<span class="token punctuation">;</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		Class <span class="token class-name">cls</span><span class="token punctuation">;</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			cls <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"reflection.ChangeFieldVal"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			Field fld <span class="token operator">=</span> cls<span class="token punctuation">.</span><span class="token function">getField</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			ChangeFieldVal cfv <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChangeFieldVal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cfv<span class="token punctuation">.</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			fld<span class="token punctuation">.</span><span class="token function">setDouble</span><span class="token punctuation">(</span>cfv<span class="token punctuation">,</span> <span class="token number">12.34</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cfv<span class="token punctuation">.</span>d <span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Throwable</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>0.0<br>
+12.34</p>
+</blockquote>
+<ul>
+<li><strong>리플렉션으로 객체의 데이터 필드를 변경할 수 있으며, 이 방식도 본질적으로 동적으로 동작하는 것에 가치가 있다.</strong></li>
+</ul>
+<h4 id="배열-사용하기">8) 배열 사용하기</h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Array<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SetArray</span> <span class="token punctuation">{</span>
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		Class <span class="token class-name">cls</span><span class="token punctuation">;</span>
+		<span class="token keyword">try</span> <span class="token punctuation">{</span>
+			cls <span class="token operator">=</span> Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">"java.lang.String"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			Object arry <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			Array<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>arry<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"Testing"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			String s <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span>Array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>arry<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">ClassNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token comment">// TODO Auto-generated catch block</span>
+			e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>Testing</p>
+</blockquote>
+<ul>
+<li><strong>배열이란 java에서 class의 특별한 type으로, 배열에 대한 참조는 Object 참조에 할당할 수 있다.</strong></li>
+</ul>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">package</span> reflection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span>Array<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SetArray2</span> <span class="token punctuation">{</span>  
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arrInit <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+		Object arry <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span>TYPE<span class="token punctuation">,</span> arrInit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		Object arrObj <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>arry<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		arrObj <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>arrObj<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		Array<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span>arrObj<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">37</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arrcast <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>arry<span class="token punctuation">;</span>
+		System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>arrcast<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>실행결과</p>
+<blockquote>
+<p>37</p>
+</blockquote>
+<ul>
+<li><strong>바로 위 예제는 5 X 10 X 15 차원의 배열을 만든 후, [3][5][10] index에 37이라는 값을 할당한다.</strong></li>
+<li><strong>한가지 유심깊게 살펴볼 것은, 컴파일 시간에 배열의 타입이 정해지지 않아도 되는 부분이다</strong></li>
+</ul>
+<h3 id="결론">결론</h3>
+<p>reflection을 사용하면, class의 구조를 동적으로 가져와 활용할 수 있다. 또한, java 프로그램을 실행하는 동안, class를 조작할 수 있다는 점에서 큰 의미가 있다.</p>
+<p>referenced by : <a href="http://bluelemonwater.tistory.com/entry/%EC%9E%90%EB%B0%94-%EB%A6%AC%ED%94%8C%EB%A0%89%EC%85%98-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-Using-Java-Reflection">http://bluelemonwater.tistory.com/entry/자바-리플렉션-사용하기-Using-Java-Reflection</a></p>
+</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/taehyun87" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/thyun.ahn" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/thyun1121/" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+              <li class="list-inline-item">
+                <a href="https://github.com/thyun1121" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; thyun.ahn@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>thyun.Ahn's blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    
+    
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackedit.io/style.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="index.html">thyun.ahn</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/blockchain.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Blockchain study - 이론</h1>
+              <h2 class="subheading">요즘 최대 이슈인 blockchain/bitcoin이란 무엇일까?</h2>
+              <span class="meta">Posted by
+                <a href="#">thyun.ahn</a>
+              on January 28, 2018</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article  class="stackedit">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+	          <div class="stackedit__html">
+	            <h1 id="blockchain">Blockchain</h1>
+				<p>가상화폐 투자를 하면서 블록체인에 관심을 갖게 되었다.</p>
+				<p>그렇다면 요즘 온/오프라인에서 떠들썩한 블록체인이란 무엇일까?</p>
+				<h2 id="정의">정의</h2>
+				<p>블록체인에 대해서 엔지니어 측면에서 정의하자면, ‘데이터 분산처리 기술’이라고 할 수 있다.<br>
+				쉽게 풀이하자면, 네트워크 상의 모든 사용자들의 거래 내역이 분산되어 저장된다는 의미이다.</p>
+				<p>블록체인은 block+chain의 합성어이다.<br>
+				block은 위에서 말한 사용자들의 거래내역인 ‘장부’를 지칭하며, 이 ‘장부’들이 시간이 지남에 따라 연결되어 사슬 형태로 나타나게 되어 chain이라는 단어를 사용한다.</p>
+				<p>지금까지 정리한 내용들을 종합해보면, 모든 사용자들이 장부를 가지고 있기 때문에 장부를 확인하고자 할 때는 일일히 모든 사용자의 장부를 대조해야 한다.</p>
+				<p>그래서 블록체인은 또 다른 용어로 ‘공공거래장부’ / ‘분산거래장부’라고 불린다고 한다.</p>
+				<h2 id="그렇다면-기존-장부와-블록체인의-차이점은-무엇일까">그렇다면 기존 장부와 블록체인의 차이점은 무엇일까?</h2>
+				<p>차이점은 거래하는 사람 사이에 제3자의 존재유무이다.<br>
+				기존 거래는 제3자 즉, 은행/금융기관이 존재하였다.<br>
+				하지만 블록체인은 직접 거래자들끼리 거래를 하고 거래 내역도 직접 저장한다.(P2P)<br>
+				거래내역은 거래한 사람들끼리만 갖는 것이 아니라, 네트워크에 존재하는 모든 사람에게 나뉘어 전송/저장한다. (분산저장!!!)</p>
+				<p>실제로 제3자(금융기관)없이 거래 당사자들의 장부를 서로 동기화 시키고, 신뢰할 수 있도록 해주는 분산원장기술을 추구하였는데 블록체인이 이를 구현시켜줬다고 볼 수 있겠다.</p>
+				<h2 id="거래내역은-단순히-거래를-한다고만해서-블록에-저장되는-것일까">거래내역은 단순히 거래를 한다고만해서 블록에 저장되는 것일까?</h2>
+				<p>답은 NO.<br>
+				블록체인은 네트워크에 들어오느 트랜잭션 중 네트워크 참여자들의 합의 하에 승인된 것만 통과시키기 때문에 참여자들의 합의를 이끌어내지 못한 데이터 또는 트랜잭션 요청은 쫓아내면서 네트워크를 유지한다고 한다.</p>
+				<h2 id="블록체인과-암호화폐-분리-대응이-가능할까">블록체인과 암호화폐 분리 대응이 가능할까?</h2>
+				<p>나는 그 동안 암호화폐란, 블록체인 알고리즘을 사용하는 응용프로그램이라 생각했는데 그게 아닌가부다…<br>
+				우선 분리 대응이 가능한지 여부를 파악하기 전에 블록체인에는 2가지 종류가 있다.<br>
+				public blockchain / private blockchain<br>
+				이 둘의 차이점은 용어에서 파악할 수 있듯이, 각각 개방형과 폐쇄형이다.<br>
+				public blockchain에서는 서로 모르는 사람들끼리 네트워크 시스템을 구성하는 것이고,<br>
+				private blockchain은 서로 아는 사람들기리 폐쇄적인 네트워크 시스템을 구성한다.<br>
+				위에서 블록체인은 합의를 통해 이루어지는 시스템이라고 했다.<br>
+				private blockchain에서는 의사결정권을 누가 가질 것인지 정하면 되지만,<br>
+				public에서는 익명의 사람들끼리 있으므로 채굴이란 의사결정권을 주었다.<br>
+				참고하는 기사에서는 아래와 같이 언급한다.</p>
+				<blockquote>
+				<p>“의사결정권을 암호화폐라는 일종의 지분으로 준 셈이다. 지분을 많이 가지고 있는 참여자는 네트워크에 해를 끼치는 결정을 하지 않을 것이기 때문이다.<br>
+				또, 획득한 지분은 유통할 수 있기 때문에 채굴업차(마이너)들이 기꺼이 자신의 컴퓨팅 파워를 네트워크에 제공하게 만드는 인센티브가 되고 있다.”</p>
+				</blockquote>
+				<p>이제 결론을 내려보자.<br>
+				그래서 암호화폐와 블록체인의 분리 대응이 가능한가?</p>
+				<ul>
+				<li>private blockchain을 사용하겠다면 가능.</li>
+				<li>public blockchain에서는 불가능.</li>
+				</ul>
+				<p>와이?</p>
+				<ol>
+				<li>암호화폐는 블록체인 시스템에서 합의 알고리즘 그 자체이기 때문에 불가능하다!</li>
+				<li>public blockchain의 핵심은 보상!! 암호화폐는 노드 제공자에게 보상함으로써 public blockchain이 운영하기에 불가능하다!<br>
+				<a href="http://m.news.naver.com/hotissue/read.nhn?sid1=101&amp;cid=1074429&amp;iid=2998177&amp;oid=092&amp;aid=0002129738">* reference article</a></li>
+				</ol>
+				<h2 id="채굴">채굴?</h2>
+				<p>채굴을 하게되면 블록을 생성하게 되고 한 블록당 지정된 코인만큼을 보상으로 받는다.<br>
+				앞서 말했듯이 채굴을 하게 되면 블록을 생성 된다.<br>
+				채굴에 성공한 자가 현재 소유하고 있는 코인을 송금하겠다고 해보자.<br>
+				송금하게되면 송금 transaction이 이루어진다.<br>
+				하지만 transaction을 발생시킨다고 해서 송금이 완료되지 않는다.<br>
+				이 transaction 거래 내역도 블록에 저장되어야 하기 때문에 블록이 생성되어야 하며 이말은 즉, 계속 채굴이 이루어져야 한다는 뜻이다.<br>
+				결론은,<br>
+				보상을 받는 이유는 무수한 자원을 이용해 채굴하므로 자원 이용에 대한 보상차원일 수 있겠지만…<br>
+				가장 큰 이유는 내 개인적인 의견은…<br>
+				블록이 생성되어야 transaction(매매)가 이루어지고 매매로 인해 화폐의 가치가 올라가므로, 화폐의 존속여부에 대한 보상이 제일 크지 않을까 라는 생각을 조심스럽게 해본다.</p>
+				<h2 id="스마트계약">스마트계약</h2>
+				<p>Nick Szebo 라는 과학자이자 법학자가 제창한 개념.</p>
+				<blockquote>
+				<p>“미리 정해진 임의의 규칙을 바탕으로 자동적으로 디지털 자산을 이동시키는 시스템.”</p>
+				</blockquote>
+				<p>블록체인과 연관지어서 살펴보면,<br>
+				블록체인은 정보가 변형되지 않도록 확실한 형태로 저장하는 것인데, 이런 블록체인을 사용하여 스마트 계약을 실현시키는 것이 블록체인을 기반으로 하는 응용프로그램이다.</p>
+				<p>그러니까 내가 이해한 바로는</p>
+				<p>블록체인은 하나의 기술이며, 비트코인/이더리움/리플 등은 블록체인의 응용프로그램이다.<br>
+				또한 이더리움 역시 블록체인을 기반으로 하나의 플랫폼이 되어 자유롭게 응용 프로그램을 개발하여 스마트 계약을 할 수 있도록 해준다.</p>
+	         </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/taehyun87" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/thyun.ahn" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/thyun1121/" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+              <li class="list-inline-item">
+                <a href="https://github.com/thyun1121" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; thyun.ahn@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
