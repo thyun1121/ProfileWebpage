@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.myProfile.thyun.Service.WorldCupSvc;
-import com.myProfile.thyun.model.Artists;
+import com.myProfile.thyun.model.WorldcupNation;
 
 @Controller
 public class WorldCupCtr {
@@ -28,10 +28,11 @@ public class WorldCupCtr {
 	@RequestMapping(value = "/tournament", method = RequestMethod.GET)
 	public String tournament(Locale locale, Model model) {
 		logger.info("testing for WorldCup. The client locale is {}.", locale);		
-		List<Artists> artists = worldCupSvc.tournament();
-		System.out.println(artists.get(0).getArtistNm());
+		List<WorldcupNation> nationsList = worldCupSvc.tournament();
+		System.out.println(nationsList.get(0).getNation());
 		
 		//System.out.println(artists.get(0).getArtistId());
+		model.addAttribute("nationalList",nationsList);
 		
 		return "worldCup.jsp";
 	}
