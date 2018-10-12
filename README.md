@@ -5,15 +5,18 @@
   This is website for my Profile/Portfolio <br>  
 
 
-## Introduction
-  This website is based on Spring Framework. <br>
-  Used bootstrap for UI. <br>
-  Web server is running on AWS(Amazon Web Services).
+## website spec
+  - frontend <br/>
+    - bootstrap, javascript, jquery, jsp <br/><br/>
+  - backend <br/>
+    - Spring Framework <br/><br/>
+  - server <br/>
+    - Tomcat 8 <br/><br/>
+  - environment <br/>
+    - AWS linux(Ubuntu)
 
 ## Plan
-  1. Add Education Information.
-  2. Find solution to call this website without 'www'.
-  3. Make favicon.
+  1. change http -> https
   
 ## Reference
   bootstrap 
