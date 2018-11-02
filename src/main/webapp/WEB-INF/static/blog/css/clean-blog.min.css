@@ -195,15 +195,13 @@ header.masthead {
 	background-size: cover
 }
 
-header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading
-	{
+header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
 	padding: 200px 0 150px;
-	color: #fff
+	color: #fff 
 }
 
 @media only screen and (min-width:768px) {
-	header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading
-		{
+	header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
 		padding: 200px 0
 	}
 }
@@ -217,8 +215,7 @@ header.masthead .page-heading h1, header.masthead .site-heading h1 {
 	margin-top: 0
 }
 
-header.masthead .page-heading .subheading, header.masthead .site-heading .subheading
-	{
+header.masthead .page-heading .subheading, header.masthead .site-heading .subheading{
 	font-size: 24px;
 	font-weight: 300;
 	line-height: 1.1;
