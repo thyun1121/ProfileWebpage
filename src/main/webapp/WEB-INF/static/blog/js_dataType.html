@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>thyun.Ahn's blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    
+    
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackedit.io/style.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="index.html">thyun.ahn</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/javascript.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading" style="background-color: #0F0F0B; background-clip: content-box; background-color: rgba(15, 15, 11, 0.95);">
+              <h1>Javascript</h1>
+              <h2 class="subheading">Javascript 기초부터 심화까지 공부해보자</h2>
+              <p class="meta">Posted by
+                <a href="#">thyun.ahn</a> on November 13, 2018
+               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article  class="stackedit">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+	          <div class="stackedit__html"><h1 id="primitive-type--reference-type">Primitive Type &amp; Reference Type</h1>
+<p>만약 누군가 해당 주제에 대해서 물어본다면, 난 과연 제대로 답할 수 있을까? 아니! ㅋㅋㅋ<br>
+아마 “전자는 메모리에 직접 값을 할당, 후자는 메모리 주소를 할당하여 값을 참조한다.” 라며 어설픈 답을 늘어놨을 것이다.</p>
+<p>그래서 제대로 답할 수 있도록 정리를 해보자.</p>
+<h2 id="primitive-type">Primitive Type</h2>
+<p>한글로는 ‘기본 타입’ 이라하며, 이들의 값은 ‘변경 불가능한 값’(immutable value) 이다. 그리고 메모리에 값을 그대로 할당한다.</p>
+<blockquote>
+<p>immutable value<br>
+변경 불가능하다는 것은 해당 변수의 값을 못 바꾼다는 말이 아니라, <u>메모리 영역에서의 변경이 불가능하다</u> 라는 뜻. 당연히 재할당은 가능.</p>
+</blockquote>
+<p>아래 6가지 타입을 포함하고 있다.</p>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>Symbol (ES6 추가)</li>
+</ul>
+<h3 id="메모리-동작">메모리 동작</h3>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> <span class="token string">'hundred'</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="https://lh3.googleusercontent.com/lSwXzSRnP_cE6yApAqzG8qlFg628QNkZiej3d1cDaT5--zHPtcpoY8DOdRPbF9-AdB9RMQeY07Lz" alt="enter image description here" title="primitive memory"></p>
+<ol>
+<li>데이터가 담길 공간을 확보. 즉, 0X901 메모리 확보 후 변수 a와 매칭. 현재 단계에서는 그림 상의 @0X902가 아닌 @0X901이 a와 매칭된다. 그리고 0X901 메모리에 100을 할당한다.</li>
+<li>동일하게 'hundred’가 담길 공간 확보 (0X902) 후 값 할당한다. 그리고 변수 a를 새로운 메모리 주소 0X902와 매칭한다.</li>
+<li>0X901 메모리의 값은 나중에 GC(Garbage Collector)에 의해서 사라지게 된다.</li>
+</ol>
+<h2 id="reference-type">Reference Type</h2>
+<p>한글로는 ‘참조 타입’ 이라하며, 이들의 값은 ‘변경 가능한 값’(mutable value) 이다. Primitive Type과 다른 점은 값이 들어있는 주소값을 할당한다.</p>
+<p>기본적으로 Object가 포함되어 있으며 Object에는 다음과 같이 존재한다.</p>
+<ul>
+<li>Array</li>
+<li>Function</li>
+<li>RegExp</li>
+<li>Map (ES6 추가)</li>
+<li>WeakMap (ES6 추가)</li>
+<li>Set (ES6 추가)</li>
+<li>WeakSet (ES6 추가)</li>
+</ul>
+<h3 id="메모리-동작-1">메모리 동작</h3>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token string">'name'</span> <span class="token punctuation">:</span> <span class="token string">'thyunAhn'</span>
+	<span class="token punctuation">,</span><span class="token string">'career'</span> <span class="token punctuation">:</span> <span class="token number">4</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+</code></pre>
+<p><img src="https://lh3.googleusercontent.com/2tApZGrZHF6so-b6D9-AyTKvBQjimJXCvXkWFns4QCAp0OerLZvQ54EKCE98s7khiVc3QLJAO6E_" alt="enter image description here" title="reference memory"></p>
+<ol>
+<li>데이터가 담길 공간을 확보. 즉, 0X904 메모리 확보. obj의 값은 {} 객체이므로 객체가 담길 또 다른 메모리 공간을 확보한다(0X903). name과 career key의 값은 primitive type이므로 각각 메모리 확보 후 값을 할당한다. (0X901 : 4, 0X902 : thyunAhn)</li>
+<li>0X904 메모리는 0X903을 참조한다.</li>
+<li>obj 변수와 0X904 메모리 주소를 매핑한다.</li>
+<li>obj2 변수에 obj 값을 할당하므로 obj2와 매핑되는 메모리에는 그대로 obj가 바라보는 메모리 주소인 0X904가 들어간다.</li>
+<li><strong>이것은 결국 obj의 값이 바뀌게 되면 obj2의 값 역시 동일하게 변경됨을 의미한다.</strong></li>
+</ol>
+<p>nested 객체도 마찬가지이다.<br>
+nested 객체 인 경우 위의 reference type의 메모리 동작 과정이 한번 더 내부적으로 이루어진다.</p>
+<blockquote>
+<p>nested  객체.<br>
+nested 객체는 아래처럼 객체 안에 객체가 있는 경우를 의미한다.</p>
+<pre><code>var thyun = {
+ 	'language' : ['javascript', 'java', 'and so on..'] 
+};
+</code></pre>
+</blockquote>
+<h2 id="추가-정리할-사항">추가 정리할 사항</h2>
+<ul>
+<li>java의 데이터 타입은 어떻게 분류되는지?</li>
+<li>deep copy-swallow copy,<br>
+call bay value - call by reference</li>
+<li>ES6 에 추가된 type 들 ( Symbol, Map, Set …)</li>
+</ul>
+</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/taehyun87" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/thyun.ahn" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/thyun1121/" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+              <li class="list-inline-item">
+                <a href="https://github.com/thyun1121" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; thyun.ahn@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>

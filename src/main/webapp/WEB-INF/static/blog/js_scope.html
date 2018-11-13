@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>thyun.Ahn's blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    
+    
+    
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackedit.io/style.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="index.html">thyun.ahn</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/javascript.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading" style="background-color: #0F0F0B; background-clip: content-box; background-color: rgba(15, 15, 11, 0.95);">
+              <h1>Javascript</h1>
+              <h2 class="subheading">Javascript 기초부터 심화까지 공부해보자</h2>
+              <p class="meta">Posted by
+                <a href="#">thyun.ahn</a> on November 13, 2018
+               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article  class="stackedit">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+	      	<div class="stackedit__html"><h1 id="scope">Scope</h1>
+<p>혹시나 누가 이 글을 보고 있는지 모르겠다만,<br>
+아래 예제의 결과를 유추할 수 있다면 이 포스팅은 건너뛰어도 된다.</p>
+<p>나는 못 맞췄으니까 ㅋㅋㅋㅋㅋㅋㅋㅋ 포스팅을 하고 있지…</p>
+<ul>
+<li>Example 1.</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">outside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">inside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    x <span class="token operator">=</span> <span class="token number">22</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    x <span class="token operator">=</span> <span class="token number">13</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">inside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  x <span class="token operator">=</span> <span class="token number">44</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">outside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>답은,</p>
+<pre><code>4
+undefined
+22
+9
+13
+4
+44
+44
+</code></pre>
+<ul>
+<li>Example 2</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre><code>0
+undefined
+1
+0
+</code></pre>
+<ul>
+<li>Example 3</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre><code>0
+0
+1
+1
+</code></pre>
+<ul>
+<li>Example 4</li>
+</ul>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+  <span class="token comment">//console.log(y);	//===&gt; 에러. y is not defined</span>
+  <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre><code>10
+20
+20
+20
+10
+</code></pre>
+<p>자… 틀린 사람끼리 공부를 해볼까.</p>
+<h2 id="정의">정의</h2>
+<p>Scope라는 것은 범위를 의미하는데, 여기서 말하는 범위란,<br>
+어떤 변수들에 접근할 수 있는 범위 즉, 변수 또는 함수가 어디에서 선언되었는지 파악하여 그 대상들이 참조가 가능한 범위에 있는지를 조사하기 위해 사용되는 것이 Scope이다.</p>
+<p>Javascript Scope에는 크게 세 가지가 있으며 Local Scope에는 또 두 종류로 세분화 할 수 있다.</p>
+<ul>
+<li>Global Scope</li>
+<li>Local Scope
+<ul>
+<li>Block Scope</li>
+<li>Function Scope</li>
+</ul>
+</li>
+<li>Lexical Scope</li>
+</ul>
+<h2 id="global-scope">Global Scope</h2>
+<p>변수가 함수 또는 {} 바깥에 선언되어 있는 경우, Global Scope에 정의되었다고 말할 수 있다. 이 변수는 코드 어디에서든지 참조가 가능하다. 웹 브라우저인 경우, Window객체의 프로퍼티라고도 볼 수 있다.</p>
+<p>아래 코드 (위에서 문제로 사용된 Example2)에서 <code>callX()</code>함수 바깥에 선언된 <code>var x</code>가 Global Scope 영역에 속한다.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>Global Scope가 코드 어디에서든지 참조가 가능하여 편리할 수 있겠지만, 달리 생각해보면, 의도치 않은 곳에서 새로운 값으로 재할당이 될 확률이 높기 때문에 Global 전역 변수는 웬만하면 사용하지 않는 것이 좋다. (Side Effect를 줄여야 한다.)</li>
+</ul>
+<h2 id="local-scope">Local Scope</h2>
+<p>함수 또는 {} 내부에 선언된 변수들의 영역을 Local Scope라고 한다.<br>
+위에서 살짝 언급했듯이 Block Scope와 Function Scope 두 가지가 존재한다.</p>
+<p>Block Scope는 함수가 아닌 {} 내에서 유효한 Scope를 의미한다. 예를들면 if, for, while 등도 Block Scope라고 볼 수 있다.<br>
+일반 Java나 C언어 등은  Block Scope 원리를 따르지만 <strong>JavaScript는 기본적으로  Function Scope를 규칙</strong>으로 삼고 있다.  <u><em>(ES6부터는 let/const를 사용하면 Block Scope도 가능해짐.)</em></u><br>
+Function Scope는 함수의 {} 내에서만 유효한 Scope를 의미하며, 자세히 풀이하자면 함수 안에 선언된 변수는 해당 함수에서만 유효하고 함수 외부에서는 참조할 수 없음을 의미한다.<br>
+위에 내가 제시한 Example3와 Example4가 Function Scope와 Block Scope와 관련된 예제이다.</p>
+<h3 id="function-scope-example">Function Scope Example</h3>
+<p>위 Example 3에서 살짝 변경하여 <code>callX()</code>내부에도 <code>var x</code>를 선언하였다.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">callX</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre><code>0
+undefined
+1
+0
+</code></pre>
+<p>Function Scope는 기본적으로 함수 내부에 선언된 변수만 유효하고 외부에서는 참조할 수 없으므로, <code>callX()</code>에 x를 새로 선언 한 이상 함수 내부의 x는 외부와 별도로 동작하게 된다.<br>
+위의 Example3는 <code>callX()</code>에 x를 새로 선언하지 않았기 때문에 함수 내부의 x가 외부에 선언된 x를 참조한 것이어서 결과가 다르게 나옴을 인지하자!</p>
+<h3 id="block-scope-example">Block Scope Example</h3>
+<p>위 Example4를 그대로 가져왔다.</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">{</span>
+  <span class="token comment">//console.log(y);	//===&gt; 에러. y is not defined</span>
+  <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>위에서 문제를 풀고 답을 봐서 알겠지만 <code>var</code>를 사용했을 때와  <code>let</code>을 사용했을 때 결과가 다르다.<br>
+우선 <code>var</code>로 선언한 경우, Javascript는 Function Scope를 사용하므로, 변수 x가 Block 내부에서 선언되었더라도 함수가 아니기 때문에 외부에서 블록 내부를 참조할 수 있다. 하지만 ES6부터 <code>let</code>을 사용하면 Block Scope가 실행되어 해당 {} 영역 안에서만 변수들을 접근할 수 있다.</p>
+<p>아래 예제도 알면 좋다. 왜 나는 지금껏 이걸 모르고 C언어처럼 써왔는지… 자괴감이 든다…</p>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//100 출력.</span>
+</code></pre>
+<h2 id="lexical-scope">Lexical Scope</h2>
+<p>Lexical의 사전적 의미는 “어휘의 본질” 이라는 뜻이다.  go, went, gone들의 뜻이 시점에 따라 조금씩은 다르더라도 “가다” 라는 본질을 공유하고 있듯이, Javascript에서의 Lexical Scope도 마찬가지로 "오로지 작성된 '코드’의 본질에 근거하여 참조할 수 있는 범위를 정하겠다"라는 뜻으로 파악하면 될 것 같다.<br>
+앞서 Javascript Scope의 정의를 파악할 때 코드의 실행시점에 Scope가 결정되는 것<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup>이 아니라 작성되어 있는 코드의 문맥을 근거로 변수/함수가 선언된 영역에 따라 Scope가 결정된다고 하였다. 이것이 Lexical Scope이며 다른 말로는 Static Scope라고 한다.</p>
+<p>두 예제를 들어볼테니 두 예제의 차이를 생각해보자.</p>
+<ol>
+<li></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">inside</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">outside</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  x <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+  <span class="token function">inside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">outside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="2">
+<li></li>
+</ol>
+<pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">inside</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">outside</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+  <span class="token function">inside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">outside</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>우선 공통적으로 Javascript는 함수 외부에서 내부로 참조하지 못한다는 것을 인지해야 한다.<br>
+두번째 코드에서 <code>outside()</code> 함수 내부의 <code>x</code>변수를  새로 선언했다. 즉, 두번째 코드는 <code>outside()</code> 의 <code>x</code>는 전역변수와 전혀 다른 새로운 변수로써, 해당 함수 안에서만 참조가 가능하다. 반면 첫번째 코드는 전역 <code>x</code> 변수를 모두 참조하기 때문에 출력되는 값도 <code>outside()</code> 함수 내부에서 재할당한 값으로 출력된다.</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>코드가 실행 또는 프로그램이 런타임되는 과정에서 실행 컨텍스트에 의해 정해지는 Scope를 Dynamic Scope라 한다. Perl이 이 방식을 사용하는 것 같다. <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/taehyun87" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/thyun.ahn" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/thyun1121/" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+              <li class="list-inline-item">
+                <a href="https://github.com/thyun1121" class="a_postSNS">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; thyun.ahn@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
