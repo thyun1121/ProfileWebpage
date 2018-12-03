@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>blogDesign</title>
+    <title>thyun.Ahn's blog</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
