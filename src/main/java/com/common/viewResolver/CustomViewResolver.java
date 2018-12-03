@@ -27,7 +27,7 @@ public class CustomViewResolver extends UrlBasedViewResolver implements Ordered{
 		if(viewObj instanceof JstlView){
 			
 			JstlView jv = (JstlView) viewObj;
-			if(jv.getUrl().indexOf(".jsp") > -1)	//jsp가 있는 경우, client에서 보낸 beanName jv.getBeanName()으로 호출
+			if(jv.getUrl().indexOf("worldCup") > -1)	//worldcup이 있는 경우, client에서 보낸 beanName jv.getBeanName()으로 호출
 				return null;	//jsp resolver 실행
 		}
 		return viewObj;			
