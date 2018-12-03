@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.myProfile.thyun.Service.HomeSvc;
 import com.myProfile.thyun.model.BlogPost;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
 public class HomeCtr {
 	
@@ -26,11 +23,11 @@ public class HomeCtr {
 	private HomeSvc homeSvc;	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		List<BlogPost> postList = homeSvc.posts();
+	public String findPostList(Locale locale, Model model) {
+		List<BlogPost> postList = homeSvc.findPostList();
 		logger.info("Welcome home! The client locale is {}.", locale);
-		System.out.println(postList.get(0).getPosts_title());
-		
+		System.out.println(postList.get(0));
+		model.addAttribute("postList",postList);		
 		return "index";
 	}
 	

@@ -1,17 +1,23 @@
 package com.myProfile.thyun.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="TB_POSTS")
+@Entity
+@Table(name="TB_POSTS")
 public class BlogPost {
-	
+	@Id
+	@Column(name="POSTS_NO")
 	private int posts_no;
+	@Column(name="POSTS_TITLE")
 	private String posts_title;
+	@Column(name="POSTS_SUBTITLE")
 	private String posts_subtitle;
+	@Column(name="POSTS_DATE")
 	private String posts_date;
 	
-	@Id
 	public int getPosts_no() {
 		return posts_no;
 	}

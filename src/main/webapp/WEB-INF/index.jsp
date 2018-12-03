@@ -47,96 +47,19 @@
 
     <section class="post__section">
       <div class="post__list">
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Closure</h2>
-            <h3 class="post__subtitle">Closure의 이점과 예제 </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
-        <article class="post__item">
-          <a href="" class="post__detail">
-            <h2 class="post__title">[JS] Scope</h2>
-            <h3 class="post__subtitle">Scopeì ì¢ë¥ì ìì </h3>
-          </a>
-          <p class="post__info">
-            Posted by <a href="#">thyun.ahn</a> on November 13, 2018
-          </p>
-        </article>
+      	<c:set var="postItem" value="${postList}" scope="request" />
+      	<c:forEach var="map" items="${postItem}" varStatus="status">
+      		<article class="post__item">
+	          <a href="" class="post__detail">
+	            <h2 class="post__title">${map[1]}</h2>
+	            <h3 class="post__subtitle">${map[2]}</h3>
+	          </a>
+	          <p class="post__info">
+	            Posted by <a href="#">thyun.ahn</a> on ${map[3]}
+	          </p>
+	        </article>
+      	</c:forEach>
+        
       </div>
     </section>
 
