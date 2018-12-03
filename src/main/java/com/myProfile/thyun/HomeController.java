@@ -23,7 +23,6 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		logger.info("testing for html");		
 		
 		return "index.html";
 	}
