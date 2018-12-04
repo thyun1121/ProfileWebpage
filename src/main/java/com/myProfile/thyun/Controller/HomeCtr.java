@@ -25,8 +25,7 @@ public class HomeCtr {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String findPostList(Locale locale, Model model) {
 		List<BlogPost> postList = homeSvc.findPostList();
-		logger.info("Welcome home! The client locale is {}.", locale);
-		System.out.println(postList.get(0));
+//		logger.info("Welcome home! The client locale is {}.", locale);
 		model.addAttribute("postList",postList);		
 		return "index";
 	}

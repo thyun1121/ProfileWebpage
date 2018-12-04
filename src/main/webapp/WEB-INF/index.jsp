@@ -50,7 +50,7 @@
       	<c:set var="postItem" value="${postList}" scope="request" />
       	<c:forEach var="map" items="${postItem}" varStatus="status">
       		<article class="post__item">
-	          <a href="" class="post__detail">
+	          <a href="/post/${map[4]}" class="post__detail">
 	            <h2 class="post__title">${map[1]}</h2>
 	            <h3 class="post__subtitle">${map[2]}</h3>
 	          </a>
