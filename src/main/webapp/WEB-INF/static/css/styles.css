@@ -150,8 +150,8 @@ body {
 }
 
 .post__section {
-  margin-right: auto !important;
-  margin-left: auto !important;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
   width: 60%;
@@ -279,6 +279,11 @@ svg {
   .header .menu__link:hover {
     color: rgba(3, 3, 3, 0.8);
   }
+  
+  .post__section {
+  	max-width: 720px;
+  }
+  
   /* .navigation {
     visibility: visible;
     opacity: 1;
@@ -288,9 +293,24 @@ svg {
   } */
 }
 
+@media only screen and (max-width:767px) {
+	.post__section {
+		width: 540px;
+	}
+}
+
+@media only screean and (max-width: 575px) {
+	.post__section {
+		width: 100%;
+	}
+}
+
 @media only screen and (max-width:375px) {
 	.main .blog__title {
 		font-size: 50px;
+	}
+	.post__section {
+		width: 100%;
 	}
 }
 
