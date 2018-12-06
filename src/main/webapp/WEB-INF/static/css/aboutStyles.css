@@ -1,0 +1,290 @@
+/* header and footer */
+:root {
+  --signatureColor: #f78f1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.8em 0;
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 20px;
+  font-family: Lora, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased; /*폰트 가늘게*/
+  color: #333;
+}
+
+p {
+  margin: 1.2em 0;
+}
+
+::selection {
+  color: #fff;
+  background: #0085a1;
+  text-shadow: none;
+}
+.fixed__top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.main {
+  background: no-repeat center center;
+  background-color: var(--signatureColor);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.container__inside {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer {
+  padding: 50px 0 65px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .footer__content {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 60%;
+  max-width: 1140px;
+  text-align: center;
+}
+
+.footer .sns__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  /* justify-content: space-around; */
+}
+
+.sns__list .sns__item {
+  margin-right: 15px;
+  margin-left: 15px;
+  size: 20px;
+}
+
+.footer svg {
+  width: 50px;
+  height: 50px;
+}
+
+.footer svg:hover {
+  fill: #ff9000;
+}
+
+.copyright {
+  font-size: 14px;
+  margin: 30px 0;
+  color: #868e96 !important;
+  font-weight: 400;
+}
+
+/* responsive */
+
+@media only screen and (min-width: 376px) {
+}
+
+@media only screen and (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  .container__inside {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+  
+}
+
+@media only screen and (max-width: 991px) {
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .container__inside {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* about css */
+.my__info ul,
+.menu__list {
+  padding: 0;
+  margin: 0;
+}
+.thyun__pic {
+  background: url("../images/thyunAhnMain.jpeg");
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 50%;
+}
+
+.text__center {
+  text-align: center;
+}
+
+.my__info h1,
+.my__info h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* todo::thyun :: 노트하기. 
+  - 아래 css class를 .thyun__name으로 하면, margin-bottom은 위의 margin:0으로 대체됨.
+  - 아래의 class명을 그대로 둔 채, margin-bottom대신 margin으로 하면 위의 margin:0은 30d으로 대체된다.
+  - 위를 그냥 h1으로 하면 .으로 호출한게 아니므로 우선순위가 밑으로 떨어짐.
+  신기방기.
+ */
+.my__info h1 {
+  font-family: "Kaushan Script", cursive;
+  margin-bottom: 30px;
+  font-size: 50px;
+  line-height: 1.3;
+  font-weight: 300;
+  transform: rotate(-5deg);
+}
+
+.thyun__name span {
+  padding: 4px 15px;
+  position: relative;
+}
+
+.thyun__name span::before {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  content: "";
+  background: #fff;
+  margin-left: -30px;
+}
+
+.thyun__name span::after {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 30px;
+  height: 4px;
+  content: "";
+  background: #fff;
+  margin-right: -30px;
+}
+
+.thyun__job span {
+  padding: 4px 15px;
+  position: relative;
+  font-size: 16px;
+}
+
+.my__info h3 {
+  margin-bottom: 30px;
+}
+
+.my__info li {
+  list-style: none;
+}
+.my__info svg {
+  fill: white;
+  width: 35px;
+  height: 35px;
+}
+
+.my__info .sns__list {
+  display: flex;
+  justify-content: center;
+}
+
+.about__title {
+  text-align: center;
+}
+
+.about__info h2 {
+  margin: 1.83em 0 1.2em 0;
+}
+
+.about__info h3 {
+  margin: 0 0 0.3em 0;
+  padding-left: 20px;
+}
+
+.about__info .about__list {
+  margin: 0 0 0.3em 0;
+  padding-left: 35px;
+  /* font-size: 0.9em; */
+}
+
+.about__info .no__padding {
+  padding-left: 0;
+}
