@@ -15,7 +15,7 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 	@Query("SELECT  A.posts_no"
 			+",A.posts_title"
 			+",A.posts_subtitle"
-			+",TO_CHAR(A.posts_date,  'MONTH DD, YYYY') AS posts_date \n"
+			+",TO_CHAR(A.posts_date,  'Month DD, YYYY', 'NLS_DATE_LANGUAGE=ENGLISH') AS posts_date \n"
 			+",A.postsUrl \n"
 			+"FROM BlogPost A \n"
 			+"ORDER BY A.posts_no DESC")

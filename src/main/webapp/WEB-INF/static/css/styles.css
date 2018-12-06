@@ -283,14 +283,6 @@ svg {
   .post__section {
   	max-width: 720px;
   }
-  
-  /* .navigation {
-    visibility: visible;
-    opacity: 1;
-    visibility: hidden;
-    opacity: 0;
-    height: 0px;
-  } */
 }
 
 @media only screen and (max-width:767px) {

@@ -30,4 +30,9 @@ public class HomeCtr {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/about", method = RequestMethod.GET)
+	public String findAboutPage(Locale locale, Model model) {
+		return "about";
+	}
+	
 }

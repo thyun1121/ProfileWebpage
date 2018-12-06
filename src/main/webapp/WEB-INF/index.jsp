@@ -33,8 +33,8 @@
       </button>
       <nav class="navigation menu__item__hide">
         <ul class="menu__list">
-          <li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+          <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+          <li class="menu__item"><a href="/about" class="menu__link">About</a></li>
           <li class="menu__item"><a href="#" class="menu__link">Post</a></li>
         </ul>
       </nav>
