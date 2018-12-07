@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.repository.query.Param;
 
 import com.myProfile.thyun.model.BlogPost;
 
@@ -20,6 +21,16 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 			+"FROM BlogPost A \n"
 			+"ORDER BY A.postNo DESC")
 	List<BlogPost> findPostListNoDesc();
+	
+	@Query("SELECT  B.subjectImgUrl"
+			+",B.subjectName \n"
+			+",A.postConts \n"
+			+"FROM BlogPost A \n"
+			+"JOIN A.subject B \n"
+			+"WHERE A.postUrl=:postUrl \n"
+			)
+	List<BlogPost> findByPostUrlWithSubject(@Param("postUrl")String postUrl);
+	
 	
 	BlogPost findByPostUrl(String postUrl);
 	

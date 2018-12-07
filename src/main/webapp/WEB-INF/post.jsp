@@ -32,12 +32,12 @@
   <body>
       <jsp:include page="header.jsp"></jsp:include>
     
-      <main class="main" style="background-image: url('javascript.jpg')">
+      <main class="main" style="background-image: url('${blogPost[0]}')">
         <div class="container">
           <div class="row">
             <div class="container__inside">
               <div class="post__title">
-                <h1 class="post__heading">Javascript</h1>
+                <h1 class="post__heading">${blogPost[1]}</h1>
                 <h2 class="post__subheading">
                   Javascript 기초부터 심화까지 공부해보자.
                 </h2>
@@ -52,7 +52,7 @@
       <div class="container">
         <div class="row">
           <div class="container__inside">
-              ${blogPost.postConts}
+              ${blogPost[2]}
           </div>
         </div>
       </div>

@@ -3,6 +3,8 @@ package com.myProfile.thyun.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +13,9 @@ public class BlogPost {
 	@Id
 	@Column(name="POST_NO")
 	private int postNo;
+	@ManyToOne
+	@JoinColumn(name="SUBJECT_NO")
+	private BlogSubject subject;
 	@Column(name="POST_TITLE")
 	private String postTitle;
 	@Column(name="POST_SUBTITLE")
@@ -21,11 +26,20 @@ public class BlogPost {
 	private String postUrl;
 	@Column(name="POST_CONTS")
 	private String postConts;
+	
+	
 	public int getPostNo() {
 		return postNo;
 	}
 	public void setPostNo(int postNo) {
 		this.postNo = postNo;
+	}
+	
+	public BlogSubject getSubject() {
+		return subject;
+	}
+	public void setSubject(BlogSubject subject) {
+		this.subject = subject;
 	}
 	public String getPostTitle() {
 		return postTitle;

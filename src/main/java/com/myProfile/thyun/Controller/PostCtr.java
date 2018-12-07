@@ -1,5 +1,6 @@
 package com.myProfile.thyun.Controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -24,12 +25,16 @@ public class PostCtr {
 	private PostSvc postSvc;	
 	
 	@RequestMapping(value = "/{postUrl}", method = RequestMethod.GET)
-	public String findPostDetail(@PathVariable final String postUrl, Locale locale, Model model) {
-		System.out.println("enter in postTitle controller??");
-		System.out.println(postUrl);
-		
-		BlogPost bp = postSvc.findByPostUrl(postUrl);
-		model.addAttribute("blogPost", bp);
+	public String findPostDetail(@PathVariable final String postUrl, Locale locale, Model model) {		
+		/**
+		 * https://cmsdk.com/mysql/failed-to-convert-from-type-java-lang-object-to-type.html
+		 * 아래 함수 타입을 BlogPost로 하면 오류남.
+		 * 왜냐하면 BlogPost에는 쿼리에서 조회하는 subjectNo 컬럼이 없기 때문.
+		 * 그래서 List<Object[]> 타입으로 해야 오류를 해결할 수 있음. 신기방기.
+		 */		
+		List<BlogPost> bpList = postSvc.findByPostUrlWithSubject(postUrl);
+		System.out.println(bpList.size());
+		model.addAttribute("blogPost", bpList.get(0));
 		return "post";
 	}
 	

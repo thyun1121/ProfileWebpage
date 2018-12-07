@@ -13,7 +13,7 @@ public class PostSvc {
 	@Autowired
 	private HomeJpaRepository homeJpaRepository;
 	
-	public BlogPost findByPostUrl(String postUrl){
-		return homeJpaRepository.findByPostUrl(postUrl);
+	public List<BlogPost> findByPostUrlWithSubject(String postUrl){
+		return homeJpaRepository.findByPostUrlWithSubject(postUrl);
 	}
 }
