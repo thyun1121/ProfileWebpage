@@ -23,12 +23,12 @@ public class PostCtr {
 	@Autowired
 	private PostSvc postSvc;	
 	
-	@RequestMapping(value = "/{posts_url}", method = RequestMethod.GET)
-	public String findPostDetail(@PathVariable final String posts_url, Locale locale, Model model) {
+	@RequestMapping(value = "/{postUrl}", method = RequestMethod.GET)
+	public String findPostDetail(@PathVariable final String postUrl, Locale locale, Model model) {
 		System.out.println("enter in postTitle controller??");
-		System.out.println(posts_url);
+		System.out.println(postUrl);
 		
-		BlogPost bp = postSvc.findByPostsUrl(posts_url);
+		BlogPost bp = postSvc.findByPostUrl(postUrl);
 		model.addAttribute("blogPost", bp);
 		return "post";
 	}

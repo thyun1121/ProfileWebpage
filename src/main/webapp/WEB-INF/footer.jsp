@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>thyun.Ahn's blog</title>
-    <link rel="stylesheet" href="css/headerFooterStyles.css" />
+    <link rel="stylesheet" href="/css/headerFooterStyles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
       rel="stylesheet"
@@ -72,6 +72,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/index.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>

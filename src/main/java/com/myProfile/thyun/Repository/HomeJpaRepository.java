@@ -12,16 +12,16 @@ import com.myProfile.thyun.model.BlogPost;
 //https://jdm.kr/blog/121  참고.
 public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 	
-	@Query("SELECT  A.posts_no"
-			+",A.posts_title"
-			+",A.posts_subtitle"
-			+",TO_CHAR(A.posts_date,  'Month DD, YYYY', 'NLS_DATE_LANGUAGE=ENGLISH') AS posts_date \n"
-			+",A.postsUrl \n"
+	@Query("SELECT  A.postNo"
+			+",A.postTitle"
+			+",A.postSubtitle"
+			+",TO_CHAR(A.postDate,  'Month DD, YYYY', 'NLS_DATE_LANGUAGE=ENGLISH') AS postDate \n"
+			+",A.postUrl \n"
 			+"FROM BlogPost A \n"
-			+"ORDER BY A.posts_no DESC")
+			+"ORDER BY A.postNo DESC")
 	List<BlogPost> findPostListNoDesc();
 	
-	BlogPost findByPostsUrl(String postsUrl);
+	BlogPost findByPostUrl(String postUrl);
 	
 	
 }
