@@ -1,11 +1,17 @@
 package com.myProfile.thyun.model;
 
+import java.io.BufferedReader;
+import java.io.Reader;
+import java.sql.Clob;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 @Entity
 @Table(name="TB_POST")

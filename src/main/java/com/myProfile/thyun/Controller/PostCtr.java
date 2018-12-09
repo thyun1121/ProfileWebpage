@@ -1,5 +1,6 @@
 package com.myProfile.thyun.Controller;
 
+import java.sql.Clob;
 import java.util.List;
 import java.util.Locale;
 
@@ -13,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.myProfile.thyun.Service.PostSvc;
+import com.myProfile.thyun.model.BlogHashtag;
 import com.myProfile.thyun.model.BlogPost;
+import com.myProfile.thyun.model.BlogPostHashtag;
+import com.myProfile.thyun.model.BlogSubject;
 
 @Controller
 @RequestMapping("/post/*")
@@ -32,11 +36,9 @@ public class PostCtr {
 		 * 왜냐하면 BlogPost에는 쿼리에서 조회하는 subjectNo 컬럼이 없기 때문.
 		 * 그래서 List<Object[]> 타입으로 해야 오류를 해결할 수 있음. 신기방기.
 		 */		
-		List<BlogPost> bpList = postSvc.findByPostUrlWithSubject(postUrl);
-		System.out.println(bpList.size());
-		System.out.println(bpList.get(0).getPostDate());
-		System.out.println(bpList.get(0).getSubject().getSubjectName());
-		model.addAttribute("blogPost", bpList.get(0));
+		BlogPostHashtag resultData = postSvc.findByPostUrlWithSubject(postUrl);
+		
+		model.addAttribute("postData",resultData);
 		return "post";
 	}
 	

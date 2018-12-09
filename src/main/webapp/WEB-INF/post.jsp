@@ -34,20 +34,18 @@
 
   <body>
       <jsp:include page="header.jsp"></jsp:include>
-      <script>
-      	console.log("${fn:escapeXml(blogPost.subject.subjectName)}");
-      </script>
     
-      <main class="main" style="background-image: url('${blogPost.subject.subjectImgUrl}')">
+      <main class="main" style="background-image: url('${postData.post.subject.subjectImgUrl}')">
         <div class="container">
           <div class="row">
             <div class="container__inside">
               <div class="post__title">
-                <h1 class="post__heading">${blogPost.subject.subjectName}</h1>
+                <h1 class="post__heading">${postData.post.subject.subjectName}</h1>
                 <h2 class="post__subheading">
                   Javascript 기초부터 심화까지 공부해보자.
                 </h2>
-                <p class="post__info">Posted by thyun.ahn on November 13, 2018</p>
+                <p class="post__info">${postData.hashtag.hashtagName}</p>
+                <!-- <p class="post__info">Posted by thyun.ahn on November 13, 2018</p> -->
               </div>
             </div>
           </div>
@@ -58,7 +56,7 @@
       <div class="container">
         <div class="row">
           <div class="container__inside">
-              ${blogPost.postConts}
+              ${postData.post.postConts}
           </div>
         </div>
       </div>

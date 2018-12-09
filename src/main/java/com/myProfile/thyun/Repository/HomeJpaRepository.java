@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.query.Param;
 
 import com.myProfile.thyun.model.BlogPost;
+import com.myProfile.thyun.model.BlogPostHashtag;
 
 @EnableJpaRepositories("com.myProfile.thyun.Repository") 
 //https://jdm.kr/blog/121  참고.
@@ -29,12 +30,14 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 //			+"JOIN A.subject B \n"
 //			+"WHERE A.postUrl=:postUrl \n"
 //			)
-	@Query(value="SELECT B.*\n" + 
+	@Query(value="SELECT B.SUBJECT_NAME\n"
+			+ ",B.HASHTAG_NAME"
+			+ ",B.SUBJECT_IMG_URL" +
 			"    , A.*    \n" + 
 			"FROM TB_POST A\n" + 
 			"    ,(\n" + 
 			"        SELECT C.SUBJECT_NAME\n" + 
-			"                ,LISTAGG(B.HASHTAG_NAME || ',') WITHIN GROUP (ORDER BY B.HASHTAG_NAME) AS HASTAG_NAME\n" + 
+			"                ,LISTAGG(B.HASHTAG_NAME || ',') WITHIN GROUP (ORDER BY B.HASHTAG_NAME) AS HASHTAG_NAME\n" + 
 			"                ,C.SUBJECT_IMG_URL\n" + 
 			"                ,C.POST_NO\n" + 
 			"        FROM    TB_POST_HASHTAG A\n" + 
@@ -58,7 +61,7 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 			"WHERE A.POST_NO = B.POST_NO"
 			,nativeQuery =true
 			)
-	List<BlogPost> findByPostUrlWithSubject(@Param("postUrl")String postUrl);
+	List<Object[]> findByPostUrlWithSubject(@Param("postUrl")String postUrl);
 	
 	
 	BlogPost findByPostUrl(String postUrl);
