@@ -34,6 +34,8 @@ public class PostCtr {
 		 */		
 		List<BlogPost> bpList = postSvc.findByPostUrlWithSubject(postUrl);
 		System.out.println(bpList.size());
+		System.out.println(bpList.get(0).getPostDate());
+		System.out.println(bpList.get(0).getSubject().getSubjectName());
 		model.addAttribute("blogPost", bpList.get(0));
 		return "post";
 	}

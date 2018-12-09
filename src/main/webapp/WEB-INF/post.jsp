@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,13 +34,16 @@
 
   <body>
       <jsp:include page="header.jsp"></jsp:include>
+      <script>
+      	console.log("${fn:escapeXml(blogPost.subject.subjectName)}");
+      </script>
     
-      <main class="main" style="background-image: url('${blogPost[0]}')">
+      <main class="main" style="background-image: url('${blogPost.subject.subjectImgUrl}')">
         <div class="container">
           <div class="row">
             <div class="container__inside">
               <div class="post__title">
-                <h1 class="post__heading">${blogPost[1]}</h1>
+                <h1 class="post__heading">${blogPost.subject.subjectName}</h1>
                 <h2 class="post__subheading">
                   Javascript 기초부터 심화까지 공부해보자.
                 </h2>
@@ -52,7 +58,7 @@
       <div class="container">
         <div class="row">
           <div class="container__inside">
-              ${blogPost[2]}
+              ${blogPost.postConts}
           </div>
         </div>
       </div>
