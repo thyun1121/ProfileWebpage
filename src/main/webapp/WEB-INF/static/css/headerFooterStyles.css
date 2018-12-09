@@ -42,7 +42,7 @@ p {
   text-shadow: none;
 }
 .fixed__top {
-  position: fixed;
+  position: absolute;	/* fixed로 하면 계속 메뉴가 상단에 고정되어 있음. */
   top: 0;
   right: 0;
   left: 0;
@@ -94,6 +94,7 @@ p {
   list-style: none;
   display: flex;
   justify-content: flex-end;
+  margin: 0 0;
 }
 .menu__item {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;

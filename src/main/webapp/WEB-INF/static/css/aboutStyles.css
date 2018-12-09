@@ -41,13 +41,13 @@ p {
   background: #0085a1;
   text-shadow: none;
 }
-.fixed__top {
+/* .fixed__top {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1030;
-}
+} */
 
 .main {
   background: no-repeat center center;
