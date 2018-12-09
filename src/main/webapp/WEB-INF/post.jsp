@@ -30,11 +30,11 @@
       href="https://fonts.googleapis.com/css?family=Kaushan+Script"
       rel="stylesheet"
     />
+   
   </head>
 
-  <body>
-      <jsp:include page="header.jsp"></jsp:include>
-    
+  <body  onload="rewriteHashtags('${postData.hashtag.hashtagName}');">
+      <jsp:include page="header.jsp"></jsp:include>    
       <main class="main" style="background-image: url('${postData.post.subject.subjectImgUrl}')">
         <div class="container">
           <div class="row">
@@ -44,7 +44,7 @@
                 <h2 class="post__subheading">
                   Javascript 기초부터 심화까지 공부해보자.
                 </h2>
-                <p class="post__info">${postData.hashtag.hashtagName}</p>
+                <p class="post__info"></p>
                 <!-- <p class="post__info">Posted by thyun.ahn on November 13, 2018</p> -->
               </div>
             </div>
@@ -64,6 +64,7 @@
 
     <jsp:include page="footer.jsp"></jsp:include>
     <script src="/js/index.js"></script>
+    <script src="/js/post.js"></script>
   </body>
 </html>
 
