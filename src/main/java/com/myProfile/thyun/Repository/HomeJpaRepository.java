@@ -66,5 +66,15 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 	
 	BlogPost findByPostUrl(String postUrl);
 	
+	@Query("SELECT  C.postTitle\n" + 
+			"        ,C.postSubtitle\n" + 
+			"        ,TO_CHAR(C.postDate,  'Month DD, YYYY', 'NLS_DATE_LANGUAGE=ENGLISH') AS postDate\n" + 
+			"        ,C.postUrl\n" + 
+			" FROM BlogPostHashtag A\n" + 
+			"    JOIN A.hashtag B\n" + 
+			"    JOIN A.post C\n" + 
+			"WHERE B.hashtagName=:tagName")
+	List<BlogPost> findPostsByHashtagName(@Param("tagName")String tagName);
+	
 	
 }
