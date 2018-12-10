@@ -1,0 +1,97 @@
+:root {
+  --signatureColor: #f78f1b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+html,
+ul {
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+body {
+  font-size: 20px;
+  font-family: Lora, "Times New Roman", serif;
+  color: #333;
+}
+
+.msg__section {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 54px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 60%;
+  max-width: 1140px;
+}
+
+.msg__section .hashtag__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.msg__item {
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+  text-align: center;
+}
+
+.msg__item{
+	text-decoration: none;
+    color: #333;
+}
+
+/* responsive */
+
+@media only screen and (max-width:375px) {
+	.msg__section {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 376px) {
+  	.msg__section {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 576px) {
+  	.msg__section {
+		max-width: 540px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	 .msg__section {
+	  	max-width: 720px;
+	  }
+}
+
+@media only screen and (max-width: 991px) {
+  
+}
+
+@media only screen and (min-width: 992px) {
+ 	.msg__section {
+  		max-width: 740px;
+  	}	
+}
+
+@media only screen and (min-width: 1200px) {
+	.msg__section {
+  		max-width: 740px;
+  	}	
+}
+
+
