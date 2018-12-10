@@ -11,7 +11,7 @@
 
     <title>thyun.Ahn's blog</title>
     <link rel="stylesheet" href="/css/headerFooterStyles.css" />
-    <link rel="stylesheet" href="css/errorStyles.css" />
+    <link rel="stylesheet" href="/css/errorStyles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
       rel="stylesheet"

@@ -51,6 +51,6 @@
       </div>
     </section>
 	<jsp:include page="footer.jsp"></jsp:include>
-    <script src="js/index.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
