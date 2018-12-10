@@ -75,7 +75,6 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 			"    JOIN A.hashtag B\n" + 
 			"    JOIN A.post C\n" + 
 			"WHERE B.hashtagName=:tagName")
-	List<BlogPost> findPostsByHashtagName(@Param("tagName")String tagName);
-	
+	List<BlogPost> findPostsByHashtagName(@Param("tagName")String tagName);	
 	
 }

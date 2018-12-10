@@ -2,6 +2,7 @@ package com.myProfile.thyun.Controller;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.SynchronousQueue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.myProfile.thyun.Service.HomeSvc;
+import com.myProfile.thyun.model.BlogHashtag;
 import com.myProfile.thyun.model.BlogPost;
 
 @Controller
@@ -31,7 +33,9 @@ public class HomeCtr {
 	}	
 	@RequestMapping(value = "/tag", method = RequestMethod.GET)
 	public String findHashtagList(Locale locale, Model model) {		
-			
+		List<BlogHashtag> tagList = homeSvc.findHashtagList();
+		System.out.println(tagList.size());
+		model.addAttribute("tagList",tagList);
 		return "tag";
 	}
 	

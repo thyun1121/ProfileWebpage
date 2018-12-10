@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>thyun.Ahn's blog</title>
     <link rel="stylesheet" href="/css/headerFooterStyles.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/tagStyles.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
       rel="stylesheet"
@@ -34,23 +34,20 @@
       <h5 class="blog__subtitle">tag repository</h5>
     </main>
 
-    <section class="post__section">
-      <div class="post__list">
-      	<c:set var="postItem" value="${postList}" scope="request" />
-      	<c:forEach var="map" items="${postItem}" varStatus="status">
-      		<article class="post__item">
-	          <a href="/post/${map[4]}" class="post__detail">
-	            <h2 class="post__title">${map[1]}</h2>
-	            <h3 class="post__subtitle">${map[2]}</h3>
-	          </a>
-	          <p class="post__info">
-	            Posted by <a href="#">thyun.ahn</a> on ${map[3]}
-	          </p>
+    <section class="hashtag__section">
+      <div class="hashtag__list">
+      	<c:set var="tagItem" value="${tagList}" scope="request" />
+      	<c:forEach var="map" items="${tagItem}" varStatus="status">
+      		<article class="hashtag__item">
+      			<a href="/tag/${map[1]}" class="hashtag__detail">
+      				<h2 class="hashtag__title">#${map[1]}</h2>
+	            	<h3 class="hashtag__subtitle">${map[2]} 게시물</h3>
+      			</a>
 	        </article>
       	</c:forEach>
       </div>
     </section>
 	<jsp:include page="footer.jsp"></jsp:include>
-    <script src="js/index.js"></script>
+   <!--  <script src="js/tag.js"></script> -->
   </body>
 </html>
