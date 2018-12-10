@@ -183,4 +183,10 @@ p {
   display: block;
 }
 
+.post__info a {
+    padding: 0 5px;
+    text-decoration: none;
+    color: inherit;
+}
+
 

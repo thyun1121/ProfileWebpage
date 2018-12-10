@@ -44,8 +44,7 @@
                 <h2 class="post__subheading">
                   Javascript 기초부터 심화까지 공부해보자.
                 </h2>
-                <p class="post__info"></p>
-                <!-- <p class="post__info">Posted by thyun.ahn on November 13, 2018</p> -->
+                <p class="post__info"><!-- Posted by thyun.ahn on November 13, 2018 --></p>
               </div>
             </div>
           </div>
