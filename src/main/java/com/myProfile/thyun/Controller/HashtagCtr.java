@@ -26,6 +26,12 @@ public class HashtagCtr {
 	@Autowired
 	private HashtagSvc hashtagSvc;	
 	
+//	@RequestMapping(value = "", method = RequestMethod.GET)
+//	public String redirectToHashtagList(Locale locale, Model model) {		
+//			
+//		return "tag";
+//	}
+	
 	@RequestMapping(value = "/{tagName}", method = RequestMethod.GET)
 	public String findPostDetail(@PathVariable final String tagName, Locale locale, Model model) {		
 		/**
@@ -43,5 +49,6 @@ public class HashtagCtr {
 		model.addAttribute("extraData", extraData);
 		return "tagPosts";
 	}
+
 	
 }

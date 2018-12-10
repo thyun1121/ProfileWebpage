@@ -20,7 +20,7 @@ public class HomeCtr {
 	private static final Logger logger = LoggerFactory.getLogger(HomeCtr.class);
 	
 	@Autowired
-	private HomeSvc homeSvc;	
+	private HomeSvc homeSvc;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String findPostList(Locale locale, Model model) {
@@ -28,11 +28,19 @@ public class HomeCtr {
 //		logger.info("Welcome home! The client locale is {}.", locale);
 		model.addAttribute("postList",postList);		
 		return "index";
+	}	
+	@RequestMapping(value = "/tag", method = RequestMethod.GET)
+	public String findHashtagList(Locale locale, Model model) {		
+			
+		return "tag";
 	}
 	
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String findAboutPage(Locale locale, Model model) {
 		return "about";
 	}
+	
+	
+
 	
 }

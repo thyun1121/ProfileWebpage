@@ -66,7 +66,8 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 	
 	BlogPost findByPostUrl(String postUrl);
 	
-	@Query("SELECT  C.postTitle\n" + 
+	@Query("SELECT  C.postNo\n" +
+			"		 ,C.postTitle" +
 			"        ,C.postSubtitle\n" + 
 			"        ,TO_CHAR(C.postDate,  'Month DD, YYYY', 'NLS_DATE_LANGUAGE=ENGLISH') AS postDate\n" + 
 			"        ,C.postUrl\n" + 

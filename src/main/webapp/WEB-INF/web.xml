@@ -13,6 +13,21 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<filter>
+	    <filter-name>UrlRewriteFilter</filter-name>
+	    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	       <init-param>
+	            <param-name>confPath</param-name>
+	            <param-value>/WEB-INF/UrlRewrite.xml</param-value>
+	        </init-param>
+	</filter>
+	<filter-mapping>
+	    <filter-name>UrlRewriteFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	    <dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
 
 	<!-- Processes application requests -->
 	<servlet>
