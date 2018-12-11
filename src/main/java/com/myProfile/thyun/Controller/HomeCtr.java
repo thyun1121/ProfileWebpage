@@ -44,6 +44,13 @@ public class HomeCtr {
 		return "about";
 	}
 	
+	@RequestMapping("/favicon.ico")
+    public String favicon() {
+        return "forward:/images/favicon/favicon.ico";
+    }
+
+
+	
 	
 
 	
