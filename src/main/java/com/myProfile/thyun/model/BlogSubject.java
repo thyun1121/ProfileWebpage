@@ -15,6 +15,9 @@ public class BlogSubject {
 	private String subjectName;
 	@Column(name="SUBJECT_IMG_URL")
 	private String subjectImgUrl;
+	@Column(name="SUBJECT_IMG_STYLE")
+	private String subjectImgStyle;
+	
 	public int getSubjectNo() {
 		return subjectNo;
 	}
@@ -33,4 +36,11 @@ public class BlogSubject {
 	public void setSubjectImgUrl(String subjectImgUrl) {
 		this.subjectImgUrl = subjectImgUrl;
 	}
+	public String getSubjectImgStyle() {
+		return subjectImgStyle;
+	}
+	public void setSubjectImgStyle(String subjectImgStyle) {
+		this.subjectImgStyle = subjectImgStyle;
+	}
+	
 }

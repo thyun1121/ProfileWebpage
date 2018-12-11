@@ -33,6 +33,7 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 	@Query(value="SELECT B.SUBJECT_NAME\n"
 			+ ",B.HASHTAG_NAME"
 			+ ",B.SUBJECT_IMG_URL" +
+			",B.SUBJECT_IMG_STYLE" +
 			"    , A.*    \n" + 
 			"FROM TB_POST A\n" + 
 			"    ,(\n" + 
@@ -40,12 +41,14 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 			"                ,LISTAGG(B.HASHTAG_NAME || ',') WITHIN GROUP (ORDER BY B.HASHTAG_NAME) AS HASHTAG_NAME\n" + 
 			"                ,C.SUBJECT_IMG_URL\n" + 
 			"                ,C.POST_NO\n" + 
+			"                ,C.SUBJECT_IMG_STYLE\n" + 
 			"        FROM    TB_POST_HASHTAG A\n" + 
 			"                ,TB_HASHTAG B\n" + 
 			"                ,(\n" + 
 			"                    SELECT SB.SUBJECT_NAME\n" + 
 			"                            ,SB.SUBJECT_IMG_URL\n" + 
 			"                            ,SA.POST_NO\n" + 
+			"                            ,SB.SUBJECT_IMG_STYLE\n" + 
 			"                      FROM TB_POST SA\n" + 
 			"                            ,TB_SUBJECT SB\n" + 
 			"                    WHERE SA.SUBJECT_NO = SB.SUBJECT_NO\n" + 
@@ -56,6 +59,7 @@ public interface HomeJpaRepository extends JpaRepository<BlogPost, String>{
 			"         GROUP BY C.SUBJECT_NAME\n" + 
 			"                , C.SUBJECT_IMG_URL\n" + 
 			"                ,C.POST_NO\n" + 
+			"                ,C.SUBJECT_IMG_STYLE\n" + 
 			"\n" + 
 			") B\n" + 
 			"WHERE A.POST_NO = B.POST_NO"

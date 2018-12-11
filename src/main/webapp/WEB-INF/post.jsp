@@ -39,10 +39,10 @@
         <div class="container">
           <div class="row">
             <div class="container__inside">
-              <div class="post__title">
+              <div class="post__title" style="background-color:${postData.post.subject.subjectImgStyle}">
                 <h1 class="post__heading">${postData.post.subject.subjectName}</h1>
                 <h2 class="post__subheading">
-                  Javascript 기초부터 심화까지 공부해보자.
+                  ${postData.post.postSubtitle}
                 </h2>
                 <p class="post__info"><!-- Posted by thyun.ahn on November 13, 2018 --></p>
               </div>
