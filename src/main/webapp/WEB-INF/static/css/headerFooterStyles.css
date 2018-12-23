@@ -75,6 +75,7 @@ p {
   padding: 7px;
   text-transform: uppercase;
   color: #777;
+  background-color: white;
 }
 
 .button__hamburger {
