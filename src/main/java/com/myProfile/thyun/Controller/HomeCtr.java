@@ -1,8 +1,10 @@
 package com.myProfile.thyun.Controller;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.SynchronousQueue;
+import java.util.Map;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +30,9 @@ public class HomeCtr {
 	public String findPostList(Locale locale, Model model) {
 		List<BlogPost> postList = homeSvc.findPostList();
 //		logger.info("Welcome home! The client locale is {}.", locale);
+		//System.out.println((String[])postList.get(0))[4]);// (String[])paramMap.get( key ) )[0]
+		
+		System.out.println(postList.get(0));
 		model.addAttribute("postList",postList);		
 		return "index";
 	}	

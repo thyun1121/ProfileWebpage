@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>thyun.Ahn's blog</title>
@@ -25,7 +26,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <jsp:include page="header.jsp"></jsp:include>
 
@@ -40,12 +40,15 @@
       	<c:forEach var="map" items="${postItem}" varStatus="status">
       		<article class="post__item">
 	          <a href="/post/${map[4]}" class="post__detail">
-	            <h2 class="post__title">${map[1]}</h2>
-	            <h3 class="post__subtitle">${map[2]}</h3>
+	            <span class="post__title">${map[1]}</span> <br/>
+	          	<span class="post__subtitle">${map[2]}</span>
 	          </a>
+	          
 	          <p class="post__info">
 	            Posted by <a href="#">thyun.ahn</a> on ${map[3]}
 	          </p>
+
+	          
 	        </article>
       	</c:forEach>
       </div>
@@ -53,4 +56,5 @@
 	<jsp:include page="footer.jsp"></jsp:include>
     <script src="/js/index.js"></script>
   </body>
+      	
 </html>

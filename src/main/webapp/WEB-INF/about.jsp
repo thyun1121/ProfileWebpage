@@ -78,24 +78,25 @@
             <div class="about__info">
               <h2>안태현 (thyun.ahn)</h2>
               <p class="about__me">
-                새로운 기술에 관심이 많으며, Frontend와 Backend 모두 좋아합니다.
+                새로운 기술에 관심이 많으며, Backend와 Frontend 모두 좋아합니다.
                 <br />
                 사용자 중심의 시스템을 만드는 것을 최우선적인 목표로 삼고
                 있습니다.
               </p>
               <h2>Technical Skills</h2>
-              <h3>Frontend</h3>
-              <p class="about__list">Javascript (ES5~) / JQuery</p>
-              <p class="about__list">React</p>
-              <p class="about__list">HTML5 / CSS( Flexbox, CSS Grid)</p>
               <h3>Backend</h3>
               <p class="about__list">Java7</p>
               <p class="about__list">Spring Framework / JSP</p>
               <p class="about__list">MyBatis / JPA</p>
               <p class="about__list">Oracle / Tibero</p>
+              <h3>Frontend</h3>
+              <p class="about__list">Javascript (~ES6) / JQuery</p>
+              <p class="about__list">React</p>
+              <p class="about__list">HTML5 / CSS( Flexbox, CSS Grid)</p>
               <h3>Server</h3>
               <p class="about__list">Apache / WebToB</p>
               <p class="about__list">Tomcat / Jeus7</p>
+              <p class="about__list">Linux / Windows</p>
               <h3>Tooling / DevOps</h3>
               <p class="about__list">Git / SVN</p>
               <p class="about__list">Jenkins</p>
@@ -112,11 +113,11 @@
               </ul>
               <h2>Personal Projects</h2>
               <ul>
-                <li class="about__list no__padding">
-                  ReactNative를 이용한 앱 개발
+              	<li class="about__list no__padding">
+                  Spring Framework + JPA를 이용한 블로그 개발
                 </li>
                 <li class="about__list no__padding">
-                  ReactJS를 이용한 웹 개발
+                  NodeJS + ReactJS를 이용한 웹 서비스 개발
                 </li>
               </ul>
               <h2>Language</h2>

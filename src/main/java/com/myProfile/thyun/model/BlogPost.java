@@ -78,4 +78,11 @@ public class BlogPost {
 		this.postConts = postConts;
 	}
 	
+	@Override
+	public String toString() {
+		return "BlogPost [postNo=" + postNo + ", subject=" + subject + ", postTitle=" + postTitle + ", postSubtitle="
+				+ postSubtitle + ", postDate=" + postDate + ", postUrl=" + postUrl + ", postConts=" + postConts + "]";
+	}
+	
+	
 }

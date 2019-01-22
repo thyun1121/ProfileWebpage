@@ -14,7 +14,7 @@ h5,
 h6,
 body,
 html,
-ul {
+ul,.post__title,.post__subtitle {
   padding: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
@@ -87,12 +87,14 @@ body {
   font-size: 36px;
   margin-top: 30px;
   margin-bottom: 10px;
+  display: inline-block;
 }
 
 .post__detail .post__subtitle {
   font-size: 1.75rem;
   font-weight: 300;
   margin: 0 0 10px;
+  display: inline-block;
 }
 
 .post__detail:hover {

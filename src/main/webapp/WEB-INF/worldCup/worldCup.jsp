@@ -95,6 +95,7 @@
 	
 		$(document).ready(function(){
 			nationSetting();
+			window._hello = "hello";
 		});
 	
 	</script>
