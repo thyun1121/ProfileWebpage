@@ -14,3 +14,5 @@ menu_btn.addEventListener("click", (event) => {
   // if (result == true) menu_item.style.height = "0px";
   // else menu_item.style.height = menu_item.scrollHeight + "px"; //for show/hide animation.
 });
+
+

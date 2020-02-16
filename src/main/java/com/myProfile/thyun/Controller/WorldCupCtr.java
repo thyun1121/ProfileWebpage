@@ -29,12 +29,38 @@ public class WorldCupCtr {
 	public String tournament(Locale locale, Model model) {
 		logger.info("testing for WorldCup. The client locale is {}.", locale);		
 		List<WorldcupNation> nationsList = worldCupSvc.tournament();
-		System.out.println(nationsList.get(0).getNation());
-		
+		//System.out.println(nationsList.get(0).getNation());
 		//System.out.println(artists.get(0).getArtistId());
-		model.addAttribute("nationalList",nationsList);
+		//model.addAttribute("nationalList",nationsList);
 		
-		return "worldCup.jsp";
+		return "sessionInfo";
 	}
+	
+	@RequestMapping(value = "/getMemberInfo", method = RequestMethod.GET)
+	public String getMemberInfo(Locale locale, Model model) {
+		logger.info("testing for getMemberInfo. The client locale is {}.", locale);		
+		return "getMemberInfo";
+	}
+	
+	@RequestMapping(value = "/setMemberInfo", method = RequestMethod.GET)
+	public String setMemberInfo(Locale locale, Model model) {
+		return "setMemberInfo";
+	}
+	
+	@RequestMapping(value = "/sessionClose", method = RequestMethod.GET)
+	public String sessionClose(Locale locale, Model model) {
+		return "sessionClose";
+	}
+	
+	@RequestMapping(value = "/sessionInfo", method = RequestMethod.GET)
+	public String sessionInfo(Locale locale, Model model) {
+		return "sessionInfo";
+	}
+	
+	@RequestMapping(value = "/setSessionTime", method = RequestMethod.GET)
+	public String setSessionTime(Locale locale, Model model) {
+		return "setSessionTime";
+	}
+	
 	
 }

@@ -288,3 +288,6 @@ p {
 .about__info .no__padding {
   padding-left: 0;
 }
+
+.about__me a { color: #F78F1A; text-decoration: none; }
+.about__me a:hover { color: #F78F1A; text-decoration: underline; font-weight: bold;}

@@ -76,13 +76,15 @@
         <div class="row">
           <div class="container__inside">
             <div class="about__info">
-              <h2>안태현 (thyun.ahn)</h2>
+              <h2>Taehyun Ahn (thyun.ahn)</h2>
               <p class="about__me">
-                새로운 기술에 관심이 많으며, Backend와 Frontend 모두 좋아합니다.
+                IT 기술에 관심이 많으며, 웹 개발을 좋아합니다.
                 <br />
-                사용자 중심의 시스템을 만드는 것을 최우선적인 목표로 삼고
-                있습니다.
+                최근에는 보안 및 개인정보보호를 웹 개발과 연관짓기 위한 궁리 중입니다.
+                <br />
+                <a href="https://contractfortheweb.org/">#ForTheWeb</a>
               </p>
+              
               <h2>Technical Skills</h2>
               <h3>Backend</h3>
               <p class="about__list">Java7</p>

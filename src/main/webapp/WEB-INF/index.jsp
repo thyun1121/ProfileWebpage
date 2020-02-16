@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%
+	/* response.getWriter().println("<script type='text/javascript'>alert('Hello');</script>"); */
+	//out.println( "alert('Hello')" );
+%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
