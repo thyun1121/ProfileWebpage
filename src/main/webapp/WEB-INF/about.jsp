@@ -51,13 +51,11 @@
                   </a>
                 </li>
                 <li class="sns__item">
-                  <a href="https://www.linkedin.com/in/thyun1121/">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path
-                        d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
-                      />
-                    </svg>
-                  </a>
+                  <a href="https://medium.com/@thyun.ahn">
+                	<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                		<path d="m22.085 4.733 1.915-1.832v-.401h-6.634l-4.728 11.768-5.379-11.768h-6.956v.401l2.237 2.693c.218.199.332.49.303.783v10.583c.069.381-.055.773-.323 1.05l-2.52 3.054v.396h7.145v-.401l-2.52-3.049c-.273-.278-.402-.663-.347-1.05v-9.154l6.272 13.659h.729l5.393-13.659v10.881c0 .287 0 .346-.188.534l-1.94 1.877v.402h9.412v-.401l-1.87-1.831c-.164-.124-.249-.332-.214-.534v-13.467c-.035-.203.049-.411.213-.534z" />
+              		</svg>
+              	  </a>
                 </li>
               </ul>
             </div>
@@ -80,25 +78,24 @@
               <p class="about__me">
                 IT 기술에 관심이 많으며, 웹 개발을 좋아합니다.
                 <br />
-                최근에는 보안 및 개인정보보호를 웹 개발과 연관짓기 위한 궁리 중입니다.
+                최근에는 보안 및 개인정보보호를 웹과 연관짓기 위해 궁리 중입니다.
                 <br />
                 <a href="https://contractfortheweb.org/">#ForTheWeb</a>
               </p>
               
               <h2>Technical Skills</h2>
               <h3>Backend</h3>
-              <p class="about__list">Java7</p>
+              <p class="about__list">Java</p>
               <p class="about__list">Spring Framework / JSP</p>
               <p class="about__list">MyBatis / JPA</p>
-              <p class="about__list">Oracle / Tibero</p>
+              <p class="about__list">Oracle RDBMS / Tibero / MariaDB</p>
               <h3>Frontend</h3>
               <p class="about__list">Javascript (~ES6) / JQuery</p>
-              <p class="about__list">React</p>
               <p class="about__list">HTML5 / CSS( Flexbox, CSS Grid)</p>
               <h3>Server</h3>
               <p class="about__list">Apache / WebToB</p>
-              <p class="about__list">Tomcat / Jeus7</p>
-              <p class="about__list">Linux / Windows</p>
+              <p class="about__list">Tomcat / Jeus7 / WebLogic</p>
+              <p class="about__list">Linux / Windows / Unix</p>
               <h3>Tooling / DevOps</h3>
               <p class="about__list">Git / SVN</p>
               <p class="about__list">Jenkins</p>
@@ -106,11 +103,10 @@
               <h2>Works</h2>
               <ul>
                 <li class="about__list no__padding">
-                  경희대학교 차세대정보시스템 1단계 구축 [Info21], 2017.07 -
-                  2018.10
+                  대학교 시스템 운영 및 개발, 2019.04 ~ 현재
                 </li>
                 <li class="about__list no__padding">
-                  국립대 자원관리시스템 구축 [KORUS], 2015.06 - 2017.04
+                  대학교 차세대시스템 구축, 2015.06 ~ 2018.10
                 </li>
               </ul>
               <h2>Personal Projects</h2>
@@ -119,11 +115,15 @@
                   Spring Framework + JPA를 이용한 블로그 개발
                 </li>
                 <li class="about__list no__padding">
-                  NodeJS + ReactJS를 이용한 웹 서비스 개발
+                  Solid Project
                 </li>
               </ul>
               <h2>Language</h2>
-              <p class="about__list">영어 (업무 의사소통 가능)</p>
+              <ul>
+              	<li class="about__list no__padding">
+                  영어 (업무 의사소통 가능)
+                </li>
+              </ul>              
               <h2></h2>
             </div>
           </div>

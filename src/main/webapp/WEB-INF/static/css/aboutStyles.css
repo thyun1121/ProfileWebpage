@@ -289,5 +289,14 @@ p {
   padding-left: 0;
 }
 
-.about__me a { color: #F78F1A; text-decoration: none; }
-.about__me a:hover { color: #F78F1A; text-decoration: underline; font-weight: bold;}
+.about__me a { 
+  color: #F78F1A; 
+  text-decoration: none;
+  font-size: medium;
+}
+
+.about__me a:hover { 
+  color: #F78F1A; 
+  text-decoration: underline; 
+  font-weight: bold;
+  }
