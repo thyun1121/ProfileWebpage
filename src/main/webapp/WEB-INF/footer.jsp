@@ -74,7 +74,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright">Copyright &copy; thyun.ahn</p>
+          <p class="copyright">E-mail : thyun.ahn@gmail.com <br/> Copyright &copy; thyun.ahn</p>
         </div>
       </div>
     </footer>
